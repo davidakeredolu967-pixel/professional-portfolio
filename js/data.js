@@ -43,7 +43,7 @@ window.NIYI_DATA = {
       technologies: ["Vanilla JavaScript", "CSS3 Architecture", "Three.js / WebGL", "AI-Assisted Workflow", "Responsive Design"],
       links: {
         live: "#",
-        github: "https://github.com/davidakeredolu967-pixel/my-portfolio"
+        github: "https://github.com/davidakeredolu967-pixel/professional-portfolio"
       },
       highlights: [
         "Interactive 3D WebGL environment with warm metallic copper and smoked glass materials",
