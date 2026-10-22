@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * NIYIVERSE — CORE APPLICATION INITIALIZATION & SECTION HYDRATION
+ * DAVID — CORE APPLICATION INITIALIZATION & SECTION HYDRATION
  * Handles dynamic content rendering, scroll spy, navigation & lifecycle
  * ============================================================================
  */
@@ -8,29 +8,68 @@
 (function () {
   'use strict';
 
-  // 1. Hydrate Capabilities Section
-  function hydrateCapabilities() {
-    const grid = document.getElementById('capabilities-grid');
-    if (!grid || !window.NIYI_DATA || !window.NIYI_DATA.capabilities) return;
+  const data = window.DAVID_DATA || window.PORTFOLIO_DATA || window.NIYI_DATA;
 
-    grid.innerHTML = window.NIYI_DATA.capabilities.map(cap => `
-      <div class="capability-card">
-        <div>
-          <div class="capability-number">${cap.number}</div>
-          <h3 class="capability-title">${cap.title}</h3>
-          <p class="capability-desc">${cap.description}</p>
+  // 1. Hydrate Capabilities Section with Editorial Architectural Layout
+  function hydrateCapabilities() {
+    const container = document.getElementById('capabilities-container');
+    if (!container || !data || !data.capabilities) return;
+
+    const capabilities = data.capabilities;
+    const featured = capabilities.filter(c => c.featured);
+    const standard = capabilities.filter(c => !c.featured);
+
+    const renderDeliverables = (items) => {
+      if (!items || !items.length) return '';
+      return `
+        <div class="capability-deliverables">
+          <div class="capability-deliverables-label">What You Can Hire Me For</div>
+          <ul class="capability-deliverables-list">
+            ${items.map(d => `<li><span class="bullet" aria-hidden="true">›</span><span>${d}</span></li>`).join('')}
+          </ul>
         </div>
-        <div class="capability-tag">${cap.tag}</div>
+      `;
+    };
+
+    container.innerHTML = `
+      <!-- Featured Core Pillars -->
+      <div class="capabilities-featured-row">
+        ${featured.map(cap => `
+          <div class="capability-card capability-card-featured">
+            <div class="capability-top-bar">
+              <span class="capability-number">${cap.number}</span>
+              <span class="badge badge-dev">${cap.tag}</span>
+            </div>
+            <h3 class="capability-title">${cap.title}</h3>
+            <p class="capability-desc">${cap.description}</p>
+            ${renderDeliverables(cap.deliverables)}
+          </div>
+        `).join('')}
       </div>
-    `).join('');
+
+      <!-- Applied Engineering & Workflows Matrix -->
+      <div class="capabilities-matrix-row">
+        ${standard.map(cap => `
+          <div class="capability-card capability-card-compact">
+            <div class="capability-top-bar">
+              <span class="capability-number">${cap.number}</span>
+              <span class="badge badge-tech">${cap.tag}</span>
+            </div>
+            <h3 class="capability-title">${cap.title}</h3>
+            <p class="capability-desc">${cap.description}</p>
+            ${renderDeliverables(cap.deliverables)}
+          </div>
+        `).join('')}
+      </div>
+    `;
   }
 
   // 2. Hydrate "How I Work" Pipeline
   function hydrateWorkflow() {
     const list = document.getElementById('workflow-steps-list');
-    if (!list || !window.NIYI_DATA || !window.NIYI_DATA.workflowSteps) return;
+    if (!list || !data || !data.workflowSteps) return;
 
-    list.innerHTML = window.NIYI_DATA.workflowSteps.map(step => `
+    list.innerHTML = data.workflowSteps.map(step => `
       <div class="workflow-step-item">
         <div class="workflow-step-num">${step.step}</div>
         <div>
@@ -44,9 +83,9 @@
   // 3. Hydrate Tools & Verified Technologies
   function hydrateTools() {
     const container = document.getElementById('tools-grid');
-    if (!container || !window.NIYI_DATA || !window.NIYI_DATA.tools) return;
+    if (!container || !data || !data.tools) return;
 
-    const { production, learning, complementary } = window.NIYI_DATA.tools;
+    const { production, learning, complementary } = data.tools;
 
     const renderList = (items) => items.map(item => `
       <div class="tool-item">
@@ -59,7 +98,7 @@
       <div class="tools-group-card">
         <div class="tools-group-header">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="var(--copper-bright)"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-          <h3 class="tools-group-title">Core Production Stack</h3>
+          <h3 class="tools-group-title">Verified Production Stack</h3>
         </div>
         <div class="tools-list">
           ${renderList(production)}
@@ -69,7 +108,7 @@
       <div class="tools-group-card">
         <div class="tools-group-header">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="var(--copper-bright)"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          <h3 class="tools-group-title">Currently Exploring</h3>
+          <h3 class="tools-group-title">Actively Learning &amp; Exploring</h3>
         </div>
         <div class="tools-list">
           ${renderList(learning)}
@@ -79,7 +118,7 @@
       <div class="tools-group-card">
         <div class="tools-group-header">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="var(--copper-bright)"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-          <h3 class="tools-group-title">Complementary Skills</h3>
+          <h3 class="tools-group-title">Complementary Capabilities</h3>
         </div>
         <div class="tools-list">
           ${renderList(complementary)}
@@ -88,7 +127,7 @@
     `;
   }
 
-  // 4. Navigation Scroll State & ScrollSpy
+  // 4. Navigation Scroll State, Mobile Drawer & ScrollSpy
   function initNav() {
     const nav = document.getElementById('site-nav');
     const toggleBtn = document.getElementById('nav-toggle-btn');
@@ -108,19 +147,42 @@
 
     // Mobile menu toggle
     if (toggleBtn && drawer) {
+      function closeDrawer() {
+        toggleBtn.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function openDrawer() {
+        toggleBtn.classList.add('open');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        drawer.classList.add('open');
+        drawer.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
       toggleBtn.addEventListener('click', () => {
-        const isOpen = toggleBtn.classList.toggle('open');
-        drawer.classList.toggle('open', isOpen);
-        document.body.style.overflow = isOpen ? 'hidden' : '';
+        const isOpen = toggleBtn.classList.contains('open');
+        if (isOpen) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
       });
 
       // Close mobile drawer when clicking a link
       drawer.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          toggleBtn.classList.remove('open');
-          drawer.classList.remove('open');
-          document.body.style.overflow = '';
-        });
+        link.addEventListener('click', closeDrawer);
+      });
+
+      // Escape key to dismiss mobile drawer
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && drawer.classList.contains('open')) {
+          closeDrawer();
+          toggleBtn.focus();
+        }
       });
     }
 
@@ -153,7 +215,7 @@
   function initConsoleWatermark() {
     const styles = [
       'color: #d98a5e',
-      'background: #0b0908',
+      'background: #08080a',
       'font-size: 13px',
       'font-family: monospace',
       'padding: 8px 12px',
@@ -162,7 +224,7 @@
     ].join(';');
 
     console.log(
-      '%c✦ NIYIVERSE — Engineered by Niyi (Mathematical Science @ FUTA)\n"I turn ideas into digital products."',
+      '%c✦ DAVID — Engineered by David (Mathematical Science @ FUTA)\n"I turn ideas into digital products."',
       styles
     );
   }

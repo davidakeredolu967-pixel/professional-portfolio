@@ -1,6 +1,6 @@
 /* ==========================================================================
-   NIYIVERSE — RESPONSIVE DESIGN & ADAPTIVE BREAKPOINTS
-   Strict matrix: 320px mobile -> 768px tablet -> 1024px laptop -> 1440px+ ultra-wide
+   DAVID // PROFESSIONAL PORTFOLIO — RESPONSIVE DESIGN & ADAPTIVE BREAKPOINTS
+   Strict matrix: 320px -> 360px -> 390px -> 430px -> 768px -> 1024px -> 1440px+
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -8,27 +8,46 @@
    -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
   :root {
-    --container-pad: 1.15rem;
-    --space-section: 3.75rem;
+    --container-pad: 1rem;
+    --space-section: 3.5rem;
+  }
+
+  /* Prevent iOS zoom on input focus */
+  input, textarea, select {
+    font-size: 16px !important;
   }
 
   .hero-section {
-    padding-top: 6.5rem;
-    padding-bottom: 3rem;
+    padding-top: 6.25rem;
+    padding-bottom: 2.5rem;
     min-height: auto;
   }
 
+  .hero-brand-pill {
+    margin-bottom: var(--space-md);
+  }
+
   .hero-wordmark {
-    font-size: 3.8rem;
-    letter-spacing: -0.03em;
+    font-size: clamp(3rem, 16vw, 4.5rem);
+    top: -0.5rem;
+    left: 0;
   }
 
   .hero-headline {
-    font-size: 1.95rem;
+    font-size: clamp(1.85rem, 8vw, 2.35rem);
+    line-height: 1.12;
   }
 
   .hero-description {
     font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-meta-strip {
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    margin-bottom: var(--space-lg);
   }
 
   .hero-cta-group {
@@ -36,11 +55,13 @@
     align-items: stretch;
     width: 100%;
     gap: 0.75rem;
+    margin-bottom: var(--space-xl);
   }
 
   .hero-cta-group .btn {
     width: 100%;
     justify-content: center;
+    padding-block: 0.85rem;
   }
 
   .hero-bottom-bar {
@@ -49,49 +70,113 @@
     gap: 0.75rem;
   }
 
+  /* Mobile: Clean, natural-scrolling project cards (zero sticky overlap traps) */
+  .work-gallery-stack {
+    perspective: none;
+    gap: 1.75rem;
+  }
+
   .project-card-wrapper {
-    top: 75px;
-    margin-bottom: 2rem;
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    margin-bottom: 1.75rem !important;
+  }
+
+  .project-card {
+    border-radius: var(--radius-lg);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
   }
 
   .project-visual-frame {
-    min-height: 220px;
+    min-height: 200px;
+    max-height: 240px;
   }
 
   .project-info-frame {
     padding: 1.25rem;
   }
 
+  .project-card-title {
+    font-size: 1.35rem;
+  }
+
+  .project-card-desc {
+    font-size: 0.90rem;
+  }
+
+  .project-takeaway-box {
+    padding: 0.65rem 0.85rem;
+  }
+
   .project-card-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.65rem;
+  }
+
+  .project-card-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Capabilities */
+  .capabilities-featured-row,
+  .capabilities-matrix-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .capability-card-featured,
+  .capability-card-compact {
+    padding: 1.25rem;
+  }
+
+  /* About */
+  .about-academic-badge {
+    padding: 0.85rem 1rem;
+  }
+
+  .workflow-container {
+    padding: 1.25rem;
+  }
+
+  /* Contact */
+  .contact-card {
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .contact-headline {
+    font-size: 1.75rem;
+  }
+
+  .contact-subtext {
+    font-size: 0.95rem;
+  }
+
+  .contact-email-box,
+  .contact-social-box,
+  .contact-composer {
+    padding: 1.15rem;
+  }
+
+  .contact-email-actions {
     flex-direction: column;
     align-items: stretch;
     width: 100%;
   }
 
-  .project-card-actions .btn {
+  .contact-email-actions .btn {
     width: 100%;
+    justify-content: center;
   }
 
-  .capabilities-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .capability-card {
-    min-height: auto;
-    padding: 1.5rem;
-  }
-
-  .contact-card {
-    padding: 1.5rem;
-  }
-
-  .contact-headline {
-    font-size: 1.85rem;
-  }
-
+  /* Case study modal */
   .modal-dialog {
-    max-height: 95vh;
+    max-height: 92vh;
     border-radius: var(--radius-md);
   }
 
@@ -100,41 +185,75 @@
   }
 
   .modal-header-image {
-    height: 200px;
+    height: 180px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .modal-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 
 /* --------------------------------------------------------------------------
-   Tablets & Mid-range Devices (481px – 768px)
+   Tablets & Mobile Landscape (481px – 768px)
    -------------------------------------------------------------------------- */
 @media (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --container-pad: 1.5rem;
+    --space-section: 4.5rem;
+  }
+
   .hero-wordmark {
-    font-size: 5.5rem;
+    font-size: 5rem;
+    top: -0.75rem;
   }
 
   .hero-headline {
-    font-size: 2.4rem;
+    font-size: 2.35rem;
+  }
+
+  /* Natural scrolling project cards on tablets */
+  .project-card-wrapper {
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    margin-bottom: 2rem !important;
   }
 
   .project-visual-frame {
     min-height: 260px;
   }
 
-  .capabilities-grid {
+  .capabilities-featured-row,
+  .capabilities-matrix-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-methods-grid {
     grid-template-columns: 1fr;
   }
 }
 
 /* --------------------------------------------------------------------------
-   Laptops (769px – 1024px)
+   Laptops & Tablet Landscape (769px – 1024px)
    -------------------------------------------------------------------------- */
 @media (min-width: 769px) and (max-width: 1024px) {
   .hero-wordmark {
-    font-size: 7.5rem;
+    font-size: 7rem;
   }
 
-  .capabilities-grid {
+  .capabilities-featured-row {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .capabilities-matrix-row {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -143,11 +262,11 @@
    -------------------------------------------------------------------------- */
 @media (min-width: 1440px) {
   :root {
-    --container-max: 1400px;
+    --container-max: 1360px;
   }
 
   .hero-wordmark {
-    font-size: 10.5rem;
+    font-size: 9.5rem;
   }
 }
 
@@ -157,24 +276,35 @@
 @media (hover: none) and (pointer: coarse) {
   /* Prevent sticky hover effects on touch devices */
   .btn:hover,
-  .capability-card:hover,
+  .capability-card-featured:hover,
+  .capability-card-compact:hover,
   .tool-item:hover,
   .project-card:hover {
     transform: none !important;
   }
 
-  /* Ensure touch targets meet minimum 44px */
+  /* Ensure touch targets meet minimum 48px */
   .btn,
   .nav-link,
   .mobile-nav-link,
   .modal-close-btn,
   .back-to-top {
-    min-height: 44px;
+    min-height: 48px;
+  }
+
+  /* Ensure custom cursor is completely hidden on touch devices */
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+
+  body {
+    cursor: auto !important;
   }
 }
 
 /* --------------------------------------------------------------------------
-   Reduced Motion Accessibility
+   Reduced Motion Accessibility (Phase 5)
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   .project-card-wrapper {
@@ -192,6 +322,10 @@
   }
 
   .hero-3d-container {
-    opacity: 0.6;
+    opacity: 0.5;
+  }
+
+  .page-preloader {
+    display: none !important;
   }
 }

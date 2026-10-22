@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * NIYIVERSE — SELECTED WORK CENTERPIECE GALLERY & 3D STACK
+ * DAVID — SELECTED WORK CENTERPIECE GALLERY & 3D STACK
  * Layered spatial transitions, 3D card tilt & case study modal system
  * ============================================================================
  */
@@ -13,11 +13,13 @@
   const modalCloseBtn = document.getElementById('modal-close-btn');
   let lastFocusedElement = null;
 
+  const data = window.DAVID_DATA || window.PORTFOLIO_DATA || window.NIYI_DATA;
+
   // 1. Render Project Cards Dynamically from Data
   function renderProjects() {
-    if (!galleryStack || !window.NIYI_DATA || !window.NIYI_DATA.projects) return;
+    if (!galleryStack || !data || !data.projects) return;
 
-    const projects = window.NIYI_DATA.projects;
+    const projects = data.projects;
     galleryStack.innerHTML = '';
 
     projects.forEach((proj, index) => {
@@ -61,7 +63,7 @@
         <article class="project-card" data-project-id="${proj.id}">
           <div class="project-visual-frame">
             <span class="badge ${statusBadgeClass} project-visual-badge">${proj.statusBadge}</span>
-            <img src="${proj.image}" alt="${proj.title} project screenshot and interface showcase" class="project-image" loading="lazy">
+            <img src="${proj.image}" alt="${proj.title} project interface preview" class="project-image" loading="lazy">
             <div class="project-visual-overlay"></div>
           </div>
           <div class="project-info-frame">
@@ -74,7 +76,7 @@
               <p class="project-card-desc">${proj.summary}</p>
               
               <div class="project-takeaway-box">
-                <div class="project-takeaway-label">The Core Problem</div>
+                <div class="project-takeaway-label">Problem Solved</div>
                 <div class="project-takeaway-text">${proj.problem}</div>
               </div>
 
@@ -84,7 +86,7 @@
             </div>
 
             <div class="project-card-actions">
-              <button class="btn btn-primary btn-pill open-case-study" data-project-id="${proj.id}">
+              <button type="button" class="btn btn-primary btn-pill open-case-study" data-project-id="${proj.id}">
                 <span>View Full Case Study</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </button>
@@ -103,7 +105,8 @@
     initModalHandlers();
   }
 
-  // 2. Centerpiece Scroll Stack: Scales down previous cards in 3D perspective
+  // 2. Desktop-Only Centerpiece Scroll Stack: Scales down previous cards in 3D perspective
+  // Mobile uses intuitive, touch-friendly natural flow (no scroll hijacking or card overlap)
   function initScrollStackEffect() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
@@ -112,24 +115,32 @@
     if (!cards.length) return;
 
     function updateStack() {
+      if (window.innerWidth <= 768) {
+        // Clear inline transform styles on mobile
+        cards.forEach(card => {
+          card.style.transform = '';
+          card.style.opacity = '';
+        });
+        return;
+      }
+
       const windowHeight = window.innerHeight;
 
       cards.forEach((card, index) => {
         const nextCard = cards[index + 1];
         if (!nextCard) return; // Last card remains fully forward
 
-        const rect = card.getBoundingClientRect();
         const nextRect = nextCard.getBoundingClientRect();
 
         // Calculate overlap progress
-        const overlap = Math.max(0, (windowHeight * 0.7) - nextRect.top);
-        const progress = Math.min(Math.max(overlap / (windowHeight * 0.6), 0), 1);
+        const overlap = Math.max(0, (windowHeight * 0.72) - nextRect.top);
+        const progress = Math.min(Math.max(overlap / (windowHeight * 0.55), 0), 1);
 
         if (progress > 0) {
-          const scale = 1 - (progress * 0.06);
-          const translateZ = -progress * 70;
-          const rotateX = progress * 2.5;
-          const opacity = 1 - (progress * 0.22);
+          const scale = 1 - (progress * 0.05);
+          const translateZ = -progress * 50;
+          const rotateX = progress * 1.8;
+          const opacity = 1 - (progress * 0.20);
 
           card.style.transform = `scale(${scale}) translateZ(${translateZ}px) rotateX(${rotateX}deg)`;
           card.style.opacity = opacity.toFixed(3);
@@ -145,7 +156,7 @@
     updateStack();
   }
 
-  // 3. Subtle 3D Mouse Tilt on Individual Project Cards (Desktop Only)
+  // 3. Subtle 3D Mouse Tilt on Individual Project Cards (Desktop Fine Pointer Only)
   function initCard3DTilt() {
     if (window.matchMedia('(hover: none) or (pointer: coarse)').matches) return;
 
@@ -157,8 +168,8 @@
         const x = (e.clientX - rect.left) / rect.width;
         const y = (e.clientY - rect.top) / rect.height;
 
-        const tiltX = (y - 0.5) * -6; // max 3 deg
-        const tiltY = (x - 0.5) * 6;
+        const tiltX = (y - 0.5) * -5;
+        const tiltY = (x - 0.5) * 5;
 
         card.style.transform = `perspective(1000px) rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg)`;
       });
@@ -197,8 +208,8 @@
   }
 
   function openCaseStudyModal(projectId, triggerBtn) {
-    if (!window.NIYI_DATA || !modalOverlay) return;
-    const project = window.NIYI_DATA.projects.find(p => p.id === projectId);
+    if (!data || !modalOverlay) return;
+    const project = data.projects.find(p => p.id === projectId);
     if (!project) return;
 
     lastFocusedElement = triggerBtn;
@@ -229,7 +240,7 @@
 
     if (modalHighlights) {
       modalHighlights.innerHTML = project.highlights
-        .map(h => `<li style="display:flex;gap:0.5rem;align-items:flex-start;margin-bottom:0.4rem;font-size:var(--text-sm);color:var(--text-secondary);"><span style="color:var(--copper-bright);font-weight:bold;">›</span><span>${h}</span></li>`)
+        .map(h => `<li style="display:flex;gap:0.6rem;align-items:flex-start;margin-bottom:0.5rem;font-size:var(--text-sm);color:var(--text-secondary);"><span style="color:var(--copper-bright);font-weight:bold;">›</span><span>${h}</span></li>`)
         .join('');
     }
 

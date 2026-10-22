@@ -1,8 +1,8 @@
 /**
  * ============================================================================
- * NIYIVERSE — 3D HERO WEBGL EXPERIENCE
+ * DAVID — 3D HERO WEBGL EXPERIENCE
  * Architecture: Three.js Interactive Sculptural Environment
- * Materials: Smoked Glass, Burnished Bronze, Warm Copper & Obsidian Space
+ * Materials: Smoked Glass, Burnished Bronze, Warm Copper & Charcoal Space
  * ============================================================================
  */
 
@@ -42,10 +42,29 @@
   let isVisible = true;
   let animationFrameId;
 
+  function updateSculptureLayout() {
+    if (!sculptureGroup) return;
+    const width = window.innerWidth;
+
+    if (width > 1024) {
+      // Widescreen / Desktop: Positioned to the right of editorial content
+      sculptureGroup.position.set(1.5, 0.15, 0);
+      sculptureGroup.scale.set(1.0, 1.0, 1.0);
+    } else if (width > 768) {
+      // Laptop / Tablet: Receded slightly into depth
+      sculptureGroup.position.set(1.0, 0.4, -1.0);
+      sculptureGroup.scale.set(0.85, 0.85, 0.85);
+    } else {
+      // Mobile: Receded deeper into space behind content with smaller scale
+      sculptureGroup.position.set(0, 0.5, -2.4);
+      sculptureGroup.scale.set(0.72, 0.72, 0.72);
+    }
+  }
+
   function init() {
     // 1. Scene & Camera
     scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x070605, 0.08);
+    scene.fog = new THREE.FogExp2(0x08080a, 0.09);
 
     const aspect = container.clientWidth / container.clientHeight;
     camera = new THREE.PerspectiveCamera(45, aspect, 0.1, 100);
@@ -64,41 +83,36 @@
     container.appendChild(renderer.domElement);
 
     // 3. Lighting System (Warm Studio Illumination)
-    const ambientLight = new THREE.AmbientLight(0x181411, 1.2);
+    const ambientLight = new THREE.AmbientLight(0x141418, 1.4);
     scene.add(ambientLight);
 
     // Key Light: Warm Ivory
-    const keyLight = new THREE.DirectionalLight(0xf7f4ee, 2.2);
+    const keyLight = new THREE.DirectionalLight(0xf5f3ef, 2.4);
     keyLight.position.set(5, 6, 4);
     scene.add(keyLight);
 
     // Rim Light: Burnished Bronze / Copper
-    const copperRimLight = new THREE.PointLight(0xd98a5e, 3.5, 15);
+    const copperRimLight = new THREE.PointLight(0xd98a5e, 3.6, 16);
     copperRimLight.position.set(-4, -2, 2);
     scene.add(copperRimLight);
 
     // Accent Top Light
-    const topAccentLight = new THREE.PointLight(0xc87a52, 2.0, 10);
+    const topAccentLight = new THREE.PointLight(0xc87a52, 2.2, 12);
     topAccentLight.position.set(2, 4, -1);
     scene.add(topAccentLight);
 
     // 4. Group for all 3D Objects
     sculptureGroup = new THREE.Group();
-    // Offset slightly to the right on desktop to balance editorial typography
-    if (window.innerWidth > 960) {
-      sculptureGroup.position.set(1.4, 0.1, 0);
-    } else {
-      sculptureGroup.position.set(0, 0, -1);
-    }
+    updateSculptureLayout();
     scene.add(sculptureGroup);
 
     // 5. Main Architectural Sculpture (Metallic Copper / Bronze Torus Knot)
-    const sculptureGeo = new THREE.TorusKnotGeometry(1.35, 0.38, 120, 24, 2, 3);
+    const sculptureGeo = new THREE.TorusKnotGeometry(1.35, 0.38, 128, 24, 2, 3);
     const sculptureMat = new THREE.MeshStandardMaterial({
-      color: 0x221711,
-      roughness: 0.28,
-      metalness: 0.82,
-      emissive: 0x110905,
+      color: 0x1f1612,
+      roughness: 0.26,
+      metalness: 0.84,
+      emissive: 0x0f0805,
       wireframe: false
     });
     mainSculpture = new THREE.Mesh(sculptureGeo, sculptureMat);
@@ -106,10 +120,10 @@
 
     // Fine wireframe overlay for mathematical precision aesthetic
     const wireframeMat = new THREE.MeshBasicMaterial({
-      color: 0xe29b74,
+      color: 0xe8a87c,
       wireframe: true,
       transparent: true,
-      opacity: 0.12
+      opacity: 0.10
     });
     const wireframeMesh = new THREE.Mesh(sculptureGeo, wireframeMat);
     wireframeMesh.scale.set(1.002, 1.002, 1.002);
@@ -117,12 +131,12 @@
 
     // 6. Smoked Glass Floating Planes
     const glassMat = new THREE.MeshPhysicalMaterial({
-      color: 0x14110e,
+      color: 0x121218,
       roughness: 0.15,
       metalness: 0.1,
       transparent: true,
-      opacity: 0.35,
-      transmission: 0.6,
+      opacity: 0.28,
+      transmission: 0.72,
       ior: 1.45,
       clearcoat: 0.8
     });
@@ -149,7 +163,7 @@
     });
 
     // 7. Ambient Floating Dust Motes (Warm Amber Particles)
-    const particleCount = 70;
+    const particleCount = 65;
     const particleGeo = new THREE.BufferGeometry();
     const particlePositions = new Float32Array(particleCount * 3);
 
@@ -162,9 +176,9 @@
     particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
     const particleMat = new THREE.PointsMaterial({
       color: 0xd98a5e,
-      size: 0.04,
+      size: 0.035,
       transparent: true,
-      opacity: 0.45,
+      opacity: 0.40,
       blending: THREE.AdditiveBlending
     });
     particles = new THREE.Points(particleGeo, particleMat);
@@ -208,11 +222,7 @@
     camera.updateProjectionMatrix();
     renderer.setSize(width, height);
 
-    if (window.innerWidth > 960) {
-      sculptureGroup.position.set(1.4, 0.1, 0);
-    } else {
-      sculptureGroup.position.set(0, 0, -1);
-    }
+    updateSculptureLayout();
   }
 
   function animate() {
@@ -220,38 +230,42 @@
     if (!isVisible) return;
 
     // Smooth Lerp for Parallax
-    mouse.x += (mouse.targetX - mouse.x) * 0.04;
-    mouse.y += (mouse.targetY - mouse.y) * 0.04;
+    mouse.x += (mouse.targetX - mouse.x) * 0.035;
+    mouse.y += (mouse.targetY - mouse.y) * 0.035;
 
     // Continuous Subtle Rotation of Main Sculpture
     if (mainSculpture) {
-      mainSculpture.rotation.x += 0.003;
-      mainSculpture.rotation.y += 0.005;
-      mainSculpture.rotation.z += 0.001;
+      mainSculpture.rotation.x += 0.0025;
+      mainSculpture.rotation.y += 0.0040;
+      mainSculpture.rotation.z += 0.0008;
     }
 
     // Gentle Floating Motion for Glass Planes
     const time = Date.now() * 0.001;
     glassPlates.forEach((item, i) => {
-      item.mesh.rotation.x = item.baseRot[0] + Math.sin(time + i) * 0.08;
-      item.mesh.rotation.y = item.baseRot[1] + Math.cos(time + i * 1.5) * 0.08;
-      item.mesh.position.y += Math.sin(time * 0.8 + i) * 0.0015;
+      item.mesh.rotation.x = item.baseRot[0] + Math.sin(time + i) * 0.06;
+      item.mesh.rotation.y = item.baseRot[1] + Math.cos(time + i * 1.5) * 0.06;
+      item.mesh.position.y += Math.sin(time * 0.7 + i) * 0.0012;
     });
 
     // Particle Drift
     if (particles) {
-      particles.rotation.y += 0.0004;
-      particles.rotation.x += 0.0002;
+      particles.rotation.y += 0.0003;
+      particles.rotation.x += 0.00015;
     }
 
     // Scroll Effect: Move Sculpture deeper into space as user scrolls
     const scrollFactor = Math.min(scrollY / 800, 1.2);
-    sculptureGroup.position.z = -scrollFactor * 2.5;
-    sculptureGroup.position.y = -scrollFactor * 0.8;
+    if (window.innerWidth > 960) {
+      sculptureGroup.position.z = -scrollFactor * 2.2;
+      sculptureGroup.position.y = 0.15 - (scrollFactor * 0.7);
+    } else {
+      sculptureGroup.position.z = -2.4 - (scrollFactor * 2.0);
+    }
 
     // Parallax Camera Offset (restrained, mature motion)
-    camera.position.x = mouse.x * 0.55;
-    camera.position.y = -mouse.y * 0.45;
+    camera.position.x = mouse.x * 0.40;
+    camera.position.y = -mouse.y * 0.32;
     camera.lookAt(0, 0, 0);
 
     renderer.render(scene, camera);

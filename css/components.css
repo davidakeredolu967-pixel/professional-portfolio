@@ -1,5 +1,5 @@
 /* ==========================================================================
-   NIYIVERSE — REUSABLE COMPONENTS & MICRO-INTERACTIONS
+   DAVID // PROFESSIONAL PORTFOLIO — REUSABLE COMPONENTS & MICRO-INTERACTIONS
    Smoked-Glass Navigation, Buttons, Badges, Custom Cursor, Modals & Toast
    ========================================================================== */
 
@@ -52,24 +52,6 @@
   border-radius: var(--radius-pill);
   background-color: var(--copper-primary);
   box-shadow: 0 0 8px var(--copper-bright);
-}
-
-.nav-brand-subtitle {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  margin-left: 0.25rem;
-  padding-left: 0.5rem;
-  border-left: 1px solid var(--border-subtle);
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .nav-brand-subtitle {
-    display: inline-block;
-  }
 }
 
 /* Desktop Navigation Links */
@@ -259,10 +241,24 @@
   gap: var(--space-xs);
 }
 
+.mobile-nav-meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 .mobile-nav-email {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   color: var(--copper-bright);
+}
+
+.mobile-nav-header {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
 }
 
 @media (min-width: 900px) {

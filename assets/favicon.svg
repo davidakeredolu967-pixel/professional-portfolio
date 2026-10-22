@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="16" fill="#090807" stroke="rgba(200, 122, 82, 0.25)" stroke-width="1.5"/>
-  <path d="M19 46 V18 L35 38 V18 H45 V46 L29 26 V46 Z" fill="url(#niyi-copper-grad)"/>
-  <circle cx="47" cy="18" r="3" fill="#d4885f"/>
+  <rect width="64" height="64" rx="16" fill="#08080a" stroke="rgba(200, 122, 82, 0.3)" stroke-width="1.5"/>
+  <path d="M21 17 H33 C42.5 17 48 23 48 32 C48 41 42.5 47 33 47 H21 V17 Z M29 24.5 V39.5 H33 C38 39.5 40.5 36.5 40.5 32 C40.5 27.5 38 24.5 33 24.5 Z" fill="url(#david-copper-grad)"/>
+  <circle cx="49" cy="17" r="3.5" fill="#d98a5e"/>
   <defs>
-    <linearGradient id="niyi-copper-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="david-copper-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#f7f4ee"/>
-      <stop offset="40%" stop-color="#e8a87c"/>
+      <stop offset="45%" stop-color="#e8a87c"/>
       <stop offset="100%" stop-color="#b86b43"/>
     </linearGradient>
   </defs>

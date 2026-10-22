@@ -1,9 +1,9 @@
-# NIYI // NIYIVERSE — Premium 3D Developer Portfolio
+# DAVID — Premium 3D Developer Portfolio
 
 > **"I turn ideas into digital products."**  
-> *I build, improve, and bring digital ideas to life through web development, AI-assisted workflows, and practical problem-solving.*
+> *I build and improve digital experiences through web development, AI-assisted workflows, and practical problem-solving.*
 
-A distinctive, cinematic 3D digital portfolio engineered with the visual standards of a boutique creative technology studio. Built for **Niyi (Akeredolu Kolade David Omoniyi)** — Mathematical Science undergraduate at the Federal University of Technology, Akure, Nigeria (FUTA), Web Developer, AI-Assisted Builder, and Problem Solver.
+A distinctive, cinematic 3D digital portfolio engineered with the visual standards of a boutique creative technology studio. Built for **David (David Akeredolu)** — Mathematical Science undergraduate at the Federal University of Technology, Akure, Nigeria (FUTA), Web Developer, AI-Assisted Builder, and Problem Solver.
 
 ---
 
@@ -104,7 +104,8 @@ Start-Process "index.html"
 
 ## ✦ Verified Contacts & Links
 
-- **Public Brand**: NIYI
+- **Public Brand**: DAVID
 - **Email**: [akeredoludavid967@gmail.com](mailto:akeredoludavid967@gmail.com)
 - **GitHub**: [https://github.com/davidakeredolu967-pixel](https://github.com/davidakeredolu967-pixel)
+- **Repository**: [https://github.com/davidakeredolu967-pixel/professional-portfolio](https://github.com/davidakeredolu967-pixel/professional-portfolio)
 - **Institution**: Federal University of Technology, Akure, Nigeria (FUTA)

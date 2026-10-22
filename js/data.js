@@ -1,27 +1,25 @@
 /**
  * ============================================================================
- * NIYIVERSE — VERIFIED DATA ARCHITECTURE
- * Brand: NIYI
- * Public positioning: "I turn ideas into digital products."
+ * DAVID — VERIFIED DATA ARCHITECTURE
+ * Public Brand: DAVID
+ * Headline: "I turn ideas into digital products."
  * ============================================================================
  */
 
-window.NIYI_DATA = {
+const PORTFOLIO_DATA = {
   profile: {
-    brandName: "NIYI",
-    creativeConcept: "NIYIVERSE",
-    fullName: "Niyi",
-    formalName: "Akeredolu Kolade David Omoniyi",
+    brandName: "DAVID",
+    fullName: "David",
+    formalName: "David Akeredolu",
     headline: "I turn ideas into digital products.",
-    supportingMessage: "I build, improve, and bring digital ideas to life through web development, AI-assisted workflows, and practical problem-solving.",
+    supportingMessage: "I build and improve digital experiences through web development, AI-assisted workflows, and practical problem-solving.",
     role: "Web Developer • AI-Assisted Developer • Digital Builder • Problem Solver",
     academic: "Mathematical Science student at the Federal University of Technology, Akure, Nigeria (FUTA)",
-    academicSummary: "Mathematical Science student at FUTA combining quantitative analysis, structured logic, and algorithmic thinking with modern web engineering.",
+    academicSummary: "Mathematical Science student at FUTA combining quantitative reasoning, structured logic, and algorithmic thinking with modern web engineering.",
     email: "akeredoludavid967@gmail.com",
     githubUsername: "davidakeredolu967-pixel",
     githubUrl: "https://github.com/davidakeredolu967-pixel",
     location: "Akure, Nigeria",
-    timezone: "Africa/Lagos", // UTC+1
     statusLabel: "Available for select projects & collaborations"
   },
 
@@ -30,26 +28,26 @@ window.NIYI_DATA = {
       id: "project-portfolio",
       number: "01",
       title: "Personal Developer Portfolio (v2)",
-      conceptBadge: "NIYIVERSE",
+      conceptBadge: "DAVID",
       type: "Production Platform & Brand",
       status: "Production Ready",
       statusBadge: "Live Platform",
       statusType: "live",
       image: "assets/images/projects/portfolio-preview.jpg",
-      summary: "A distinctive, cinematic 3D digital experience and personal brand platform engineered with vanilla web technologies, Three.js spatial computing, smoked glass surfaces, and responsive interaction design.",
+      summary: "A distinctive, cinematic 3D digital portfolio engineered with vanilla web technologies, Three.js spatial computing, smoked glass surfaces, and responsive interaction design.",
       problem: "Standard developer portfolios rely on generic templates, overused blue gradients, and static card grids that fail to convey authentic technical curiosity, craft, or architectural thinking.",
-      solution: "Designed and built an editorial 3D environment featuring an interactive WebGL architectural hero, smooth depth-aware scroll storytelling, and a 3D sticky stack project gallery without heavy framework bloat.",
+      solution: "Designed and built an editorial 3D environment featuring an interactive WebGL architectural hero, smooth depth-aware scroll storytelling, and an accessible project gallery without heavy framework bloat.",
       takeaway: "Deepened expertise in WebGL shaders, camera parallax mathematics, CSS 3D transform matrices, and performance optimization across diverse screen sizes.",
       technologies: ["Vanilla JavaScript", "CSS3 Architecture", "Three.js / WebGL", "AI-Assisted Workflow", "Responsive Design"],
       links: {
-        live: "#",
+        live: "https://professional-portfolio-ashen-kappa.vercel.app",
         github: "https://github.com/davidakeredolu967-pixel/professional-portfolio"
       },
       highlights: [
         "Interactive 3D WebGL environment with warm metallic copper and smoked glass materials",
-        "Layered 3D scroll gallery that scales backward in space as new projects advance",
+        "Layered spatial project gallery with responsive touch ergonomics on mobile devices",
         "Accessible, mobile-first design with graceful fallbacks for reduced-motion and non-WebGL environments",
-        "Zero heavyweight UI frameworks — pure native browser performance"
+        "Zero heavyweight UI runtime dependencies — pure native browser performance"
       ]
     },
     {
@@ -68,7 +66,7 @@ window.NIYI_DATA = {
       takeaway: "Mastered Firebase Auth state lifecycle handling, asynchronous Firestore query debouncing, and mobile-first recipe layout ergonomics.",
       technologies: ["JavaScript (ES6+)", "Firebase Auth", "Cloud Firestore", "HTML5 & CSS3", "Vercel Hosting"],
       links: {
-        live: "https://recipe-sharing-psi.vercel.app", // verified from vercel.json in repo
+        live: "https://recipe-sharing-psi.vercel.app",
         github: "https://github.com/davidakeredolu967-pixel/recipe-sharing"
       },
       highlights: [
@@ -90,7 +88,7 @@ window.NIYI_DATA = {
       image: "assets/images/projects/attendance-system.jpg",
       summary: "An operational platform prototype engineered to modernize attendance logging with daily sign-in and sign-out timestamps, session verification concepts, and a centralized administrative control dashboard.",
       problem: "Paper attendance sheets and manual rosters are vulnerable to lost records, inaccurate sign-in timestamps, and cumbersome administrative tallying.",
-      solution: "Designed an administrative control center (LegacyOS / Platform Control Center) featuring user session authentication, role-based access, and structured database schema for attendance history.",
+      solution: "Designed an administrative control center featuring user session authentication, role-based access, and structured database schema for attendance history.",
       takeaway: "Gained practical experience designing complex administrative dashboards, structured state tables, and data schemas for verification workflows.",
       technologies: ["JavaScript", "PostgreSQL / Supabase Schema", "Admin Dashboard UI", "Modular CSS"],
       links: {
@@ -98,7 +96,7 @@ window.NIYI_DATA = {
         github: "https://github.com/godspeedteam11-lang/GODPEED-HQ-PLATFORM"
       },
       highlights: [
-        "Centralized super-admin control panel layout with session security alerts",
+        "Centralized administrative control panel layout with session security alerts",
         "Daily sign-in and sign-out timestamp recording logic and history tables",
         "Role-based privilege separation between general attendees and administrators",
         "Database schema designed for multi-tier verification and session logs"
@@ -136,32 +134,42 @@ window.NIYI_DATA = {
     {
       number: "01",
       title: "Web Development",
-      description: "Building responsive, fast, and accessible websites, landing pages, and web applications using modern semantic HTML, clean CSS architecture, and modular JavaScript.",
-      tag: "Core Capability"
+      description: "Engineering responsive, fast, and accessible websites, landing pages, and web applications using modern semantic HTML5, modular CSS3 architecture, and performant vanilla JavaScript.",
+      deliverables: ["Custom Responsive Websites", "Modern Landing Pages", "Accessible Component Architecture", "Client-side Web Applications"],
+      tag: "Core Capability",
+      featured: true
     },
     {
       number: "02",
       title: "AI-Assisted Development",
-      description: "Utilizing modern AI coding workflows (including Google Antigravity and leading LLMs) to rapidly prototype ideas, troubleshoot complex errors, and iterate without sacrificing code quality.",
-      tag: "Modern Workflow"
+      description: "Leveraging state-of-the-art AI coding tools and prompt workflows to rapidly prototype concepts, diagnose complex bugs, and accelerate development cycles while maintaining strict code ownership and architectural quality.",
+      deliverables: ["Rapid Interactive Prototyping", "Automated Error Diagnosis & Refactoring", "Workflow Acceleration", "Edge-Case Testing"],
+      tag: "Modern Workflow",
+      featured: true
     },
     {
       number: "03",
-      title: "Website Improvement & Problem-Solving",
-      description: "Diagnosing interface bugs, fixing broken layouts on mobile screens, optimizing slow loading elements, and resolving frontend JavaScript issues.",
-      tag: "Applied Engineering"
+      title: "Website Improvement & Troubleshooting",
+      description: "Diagnosing interface bugs, fixing broken mobile responsive layouts, eliminating cumulative layout shifts, optimizing slow-loading assets, and resolving frontend JavaScript issues on existing sites.",
+      deliverables: ["Mobile Responsive Fixes", "Layout Shift & Performance Audits", "Frontend Bug Resolution", "Cross-browser Compatibility"],
+      tag: "Applied Engineering",
+      featured: false
     },
     {
       number: "04",
       title: "Digital Product Prototyping",
-      description: "Translating napkin concepts, business requirements, and rough product ideas into structured, clickable, and testable web prototypes.",
-      tag: "Product Strategy"
+      description: "Translating napkin concepts, business requirements, and rough product ideas into structured, clickable, and testable web prototypes to validate assumptions before heavy engineering.",
+      deliverables: ["Interactive Wireframe Demos", "User Flow Validation", "Component System Design", "SaaS Concept Scaffolding"],
+      tag: "Product Strategy",
+      featured: false
     },
     {
       number: "05",
-      title: "Mobile App Conversion (Exploring)",
-      description: "Investigating web-to-mobile packaging workflows using modern tools like Capacitor to bring responsive web applications to mobile operating systems. An active area of ongoing learning.",
-      tag: "Active Exploration"
+      title: "Website-to-Mobile-App Workflows",
+      description: "Exploring web-to-mobile packaging workflows using modern tools like Capacitor to adapt responsive web applications into functional mobile app packages. An active area of ongoing technical learning.",
+      deliverables: ["Capacitor Wrapper Setup", "Mobile Viewport Adaptation", "Native Touch Ergonomics", "PWA Strategy"],
+      tag: "Active Exploration",
+      featured: false
     }
   ],
 
@@ -169,53 +177,57 @@ window.NIYI_DATA = {
     {
       step: "01",
       title: "Understand the Problem",
-      description: "Deconstructing the core objective, user expectations, and functional constraints before writing any code."
+      description: "Deconstructing core business objectives, user expectations, and functional constraints before writing any code."
     },
     {
       step: "02",
-      title: "Research and Plan",
+      title: "Research & Plan",
       description: "Mapping out data structures, interface wireframes, component modularity, and the most efficient technical stack."
     },
     {
       step: "03",
-      title: "Build and Experiment",
+      title: "Build & Experiment",
       description: "Constructing clean, maintainable code, leveraging AI coding tools to accelerate boilerplate while maintaining architectural ownership."
     },
     {
       step: "04",
-      title: "Test and Refine",
-      description: "Validating across mobile, tablet, and desktop screens, checking error states, inspecting console performance, and polishing interactions."
+      title: "Test & Refine",
+      description: "Validating across mobile, tablet, and desktop viewports, checking error states, inspecting console performance, and polishing interactions."
     },
     {
       step: "05",
-      title: "Deliver and Keep Improving",
+      title: "Deliver & Keep Improving",
       description: "Deploying the digital experience, gathering real feedback, and continually refining performance and usability."
     }
   ],
 
   tools: {
     production: [
-      { name: "HTML5 & Semantic Markup", status: "Comfortable" },
-      { name: "Modern CSS3 (Grid / Flexbox / Variables)", status: "Comfortable" },
-      { name: "JavaScript (ES6+ Vanilla)", status: "Comfortable" },
-      { name: "Firebase Authentication", status: "Comfortable" },
-      { name: "Cloud Firestore Database", status: "Comfortable" },
-      { name: "Git & GitHub Version Control", status: "Comfortable" },
-      { name: "Google Antigravity & AI Developer Tools", status: "Comfortable" },
-      { name: "VS Code & Browser DevTools", status: "Comfortable" }
+      { name: "HTML5 & Semantic Markup", status: "Verified" },
+      { name: "Modern CSS3 (Grid / Flexbox / Tokens)", status: "Verified" },
+      { name: "JavaScript (ES6+ Vanilla)", status: "Verified" },
+      { name: "Firebase Auth & Cloud Firestore", status: "Verified" },
+      { name: "Git & GitHub Version Control", status: "Verified" },
+      { name: "Google Antigravity & AI Developer Tools", status: "Verified" },
+      { name: "VS Code & Browser DevTools", status: "Verified" }
     ],
     learning: [
-      { name: "React & Component Frameworks", status: "Learning" },
-      { name: "TypeScript", status: "Learning" },
+      { name: "React & Component Frameworks", status: "Actively Learning" },
+      { name: "TypeScript", status: "Actively Learning" },
       { name: "PostgreSQL & Supabase", status: "Exploring" },
       { name: "Capacitor (Web to Mobile)", status: "Exploring" },
-      { name: "Three.js & WebGL 3D", status: "Building with" }
+      { name: "Three.js & WebGL 3D", status: "Building With" }
     ],
     complementary: [
       { name: "Digital Research & Market Analysis", status: "Practicing" },
       { name: "Author Outreach & Book Scouting Exploration", status: "Explored" },
-      { name: "Technical & Gig Writing", status: "Developing" },
-      { name: "Canva & Digital Visual Assets", status: "Comfortable" }
+      { name: "Technical Documentation & Writing", status: "Developing" },
+      { name: "Visual Asset Design & Curation", status: "Comfortable" }
     ]
   }
 };
+
+// Global assignment with backwards-compatible aliases
+window.PORTFOLIO_DATA = PORTFOLIO_DATA;
+window.DAVID_DATA = PORTFOLIO_DATA;
+window.NIYI_DATA = PORTFOLIO_DATA; // legacy alias to prevent any script crash

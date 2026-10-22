@@ -1,25 +1,25 @@
 /* ==========================================================================
-   NIYIVERSE — LUXURY 3D EDITORIAL DESIGN TOKENS
-   Color Palette: Deep Obsidian, Espresso, Warm Ivory, Muted Copper & Bronze
+   DAVID // PROFESSIONAL PORTFOLIO — DESIGN TOKENS
+   Color Palette: Deep Charcoal, Near-Black, Warm Ivory, Muted Copper & Bronze
    ========================================================================== */
 
 :root {
-  /* Surface & Background Colors */
-  --bg-deep: #070605;
-  --bg-obsidian: #0b0908;
-  --bg-espresso: #14110e;
-  --bg-surface: rgba(19, 16, 14, 0.72);
-  --bg-surface-elevated: rgba(28, 24, 21, 0.85);
-  --bg-surface-subtle: rgba(255, 255, 255, 0.02);
-  --bg-glass-smoked: rgba(14, 12, 10, 0.78);
-  --bg-glass-pill: rgba(20, 17, 15, 0.65);
+  /* Surface & Background Colors (Deep Charcoal / Modern Architectural Dark) */
+  --bg-deep: #08080a;
+  --bg-obsidian: #0d0d10;
+  --bg-espresso: #141418;
+  --bg-surface: rgba(18, 18, 23, 0.75);
+  --bg-surface-elevated: rgba(25, 25, 32, 0.88);
+  --bg-surface-subtle: rgba(255, 255, 255, 0.025);
+  --bg-glass-smoked: rgba(12, 12, 16, 0.82);
+  --bg-glass-pill: rgba(20, 20, 26, 0.70);
 
   /* Typography Colors: Warm Ivory Hierarchy */
-  --text-ivory: #f7f4ee;
-  --text-secondary: #cec5b7;
-  --text-muted: #8e877a;
-  --text-faint: #565045;
-  --text-inverse: #0b0908;
+  --text-ivory: #f5f3ef;
+  --text-secondary: #d4cfc5;
+  --text-muted: #8e8a82;
+  --text-faint: #56534c;
+  --text-inverse: #08080a;
 
   /* Accent Colors: Muted Copper & Burnished Bronze */
   --copper-primary: #c87a52;
@@ -32,7 +32,7 @@
   --copper-border: rgba(200, 122, 82, 0.28);
   --copper-border-hover: rgba(217, 138, 94, 0.55);
 
-  /* Status Colors */
+  /* Status Badges */
   --status-live: #4ade80;
   --status-live-glow: rgba(74, 222, 128, 0.25);
   --status-dev: #e29b74;
@@ -40,9 +40,9 @@
   --status-concept: #94a3b8;
 
   /* Architectural Borders & Dividers */
-  --border-subtle: rgba(247, 244, 238, 0.07);
-  --border-card: rgba(247, 244, 238, 0.10);
-  --border-light: rgba(247, 244, 238, 0.16);
+  --border-subtle: rgba(245, 243, 239, 0.07);
+  --border-card: rgba(245, 243, 239, 0.10);
+  --border-light: rgba(245, 243, 239, 0.16);
   --border-focus: rgba(200, 122, 82, 0.6);
 
   /* Typography Scale */
@@ -58,13 +58,13 @@
   --text-lg: clamp(1.30rem, 1.18rem + 0.70vw, 1.55rem);
   --text-xl: clamp(1.65rem, 1.45rem + 1.10vw, 2.10rem);
   --text-2xl: clamp(2.10rem, 1.80rem + 1.60vw, 2.90rem);
-  --text-3xl: clamp(2.70rem, 2.20rem + 2.50vw, 3.90rem);
-  --text-hero: clamp(3.20rem, 2.40rem + 4.5vw, 6.20rem);
-  --text-wordmark: clamp(4.5rem, 3.2rem + 8vw, 11.5rem);
+  --text-3xl: clamp(2.70rem, 2.20rem + 2.50vw, 3.80rem);
+  --text-hero: clamp(2.80rem, 2.10rem + 3.8vw, 5.60rem);
+  --text-wordmark: clamp(3.8rem, 2.8rem + 6.5vw, 9.5rem);
 
   /* Line Heights */
-  --lh-tight: 1.05;
-  --lh-snug: 1.25;
+  --lh-tight: 1.08;
+  --lh-snug: 1.28;
   --lh-normal: 1.6;
   --lh-relaxed: 1.75;
 
@@ -102,8 +102,8 @@
   --transition-slow: 0.75s var(--ease-editorial);
 
   /* Layout Max Widths */
-  --container-max: 1320px;
-  --container-narrow: 920px;
+  --container-max: 1280px;
+  --container-narrow: 880px;
   --container-pad: clamp(1.25rem, 0.85rem + 2vw, 3rem);
 
   /* Glass Surface Effects */

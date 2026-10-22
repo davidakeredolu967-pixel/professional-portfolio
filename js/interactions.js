@@ -1,14 +1,14 @@
 /**
  * ============================================================================
- * NIYIVERSE — ADVANCED VISUAL INTERACTIONS & USER UTILITIES
- * Custom Cursor, Magnetic Buttons, Copy Email Toast, Dispatch & Live Time
+ * DAVID — ADVANCED VISUAL INTERACTIONS & USER UTILITIES
+ * Custom Cursor, Magnetic Buttons, Copy Email Toast, Dispatch & Preloader
  * ============================================================================
  */
 
 (function () {
   'use strict';
 
-  // 1. Custom Cursor (Desktop Only)
+  // 1. Custom Cursor (Desktop Fine Pointer Only)
   function initCustomCursor() {
     const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -57,7 +57,7 @@
     });
   }
 
-  // 2. Magnetic Buttons Effect
+  // 2. Magnetic Buttons Effect (Restrained 4px max pull, Desktop Only)
   function initMagneticButtons() {
     if (window.matchMedia('(hover: none) or (pointer: coarse)').matches) return;
 
@@ -69,8 +69,8 @@
         const x = e.clientX - (rect.left + rect.width / 2);
         const y = e.clientY - (rect.top + rect.height / 2);
 
-        // Restrained magnetic pull (max 5px)
-        el.style.transform = `translate(${x * 0.22}px, ${y * 0.22}px)`;
+        // Subtle, restrained magnetic pull (max 4px)
+        el.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px)`;
       });
 
       el.addEventListener('mouseleave', () => {
@@ -121,7 +121,7 @@
       btn.addEventListener('click', () => {
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(targetEmail).then(() => {
-            showToast("Email copied to clipboard: " + targetEmail);
+            showToast("Email address copied: " + targetEmail);
           }).catch(() => {
             fallbackCopy(targetEmail);
           });
@@ -138,11 +138,11 @@
       tempInput.select();
       document.execCommand('copy');
       document.body.removeChild(tempInput);
-      showToast("Email copied to clipboard: " + text);
+      showToast("Email address copied: " + text);
     }
   }
 
-  // 5. Quick Dispatch Composer Form (Direct client mailto formulation)
+  // 5. Quick Dispatch Composer Form (Direct client mailto formulation to David)
   function initQuickComposer() {
     const form = document.getElementById('quick-composer-form');
     if (!form) return;
@@ -159,57 +159,23 @@
       const msg = msgInput ? msgInput.value.trim() : '';
 
       if (!msg) {
-        showToast("Please enter a short description of your idea.");
+        showToast("Please enter a short description of your project or idea.");
         return;
       }
 
-      const subject = encodeURIComponent(`Project Inquiry: Let's build together (from ${name || 'Niyiverse Visitor'})`);
+      const subject = encodeURIComponent(`Project Inquiry: Let's build together (from ${name || 'Portfolio Visitor'})`);
       const body = encodeURIComponent(
-        `Hi Niyi,\n\n${msg}\n\nFrom: ${name || 'Prospective Client / Collaborator'}\nEmail: ${email || 'Not provided'}`
+        `Hi David,\n\n${msg}\n\nFrom: ${name || 'Prospective Client / Collaborator'}\nEmail: ${email || 'Not provided'}`
       );
 
       const mailtoUrl = `mailto:akeredoludavid967@gmail.com?subject=${subject}&body=${body}`;
       window.location.href = mailtoUrl;
 
-      showToast("Opening your email client to dispatch...");
+      showToast("Opening your email client with draft message...");
     });
   }
 
-  // 6. Real-Time Akure, Nigeria Local Time Clock
-  function initAkureClock() {
-    const clockElements = document.querySelectorAll('.akure-time-clock');
-    if (!clockElements.length) return;
-
-    function updateTime() {
-      // Akure, Nigeria is UTC+1 (West Africa Time)
-      const options = {
-        timeZone: 'Africa/Lagos',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-      };
-
-      try {
-        const formatter = new Intl.DateTimeFormat([], options);
-        const timeStr = formatter.format(new Date());
-        clockElements.forEach(el => {
-          el.textContent = `${timeStr} WAT`;
-        });
-      } catch (e) {
-        const d = new Date();
-        const timeStr = d.toTimeString().split(' ')[0];
-        clockElements.forEach(el => {
-          el.textContent = `${timeStr} WAT`;
-        });
-      }
-    }
-
-    updateTime();
-    setInterval(updateTime, 1000);
-  }
-
-  // 7. Back-to-Top Button
+  // 6. Back-to-Top Button
   function initBackToTop() {
     const backBtn = document.getElementById('back-to-top-btn');
     if (!backBtn) return;
@@ -231,7 +197,7 @@
     });
   }
 
-  // 8. Editorial Entry Preloader Dismissal
+  // 7. Editorial Entry Preloader Dismissal
   function initPreloader() {
     const preloader = document.getElementById('page-preloader');
     if (!preloader) return;
@@ -262,8 +228,6 @@
     initMagneticButtons();
     initCopyEmail();
     initQuickComposer();
-    initAkureClock();
     initBackToTop();
   });
 })();
-
