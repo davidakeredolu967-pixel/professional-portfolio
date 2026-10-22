@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="14" fill="#07090e" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
-  <path d="M18 46 V18 L34 38 V18 H46 V46 L30 26 V46 Z" fill="url(#niyi-grad)"/>
-  <circle cx="48" cy="18" r="3" fill="#00d2ff"/>
+  <rect width="64" height="64" rx="16" fill="#090807" stroke="rgba(200, 122, 82, 0.25)" stroke-width="1.5"/>
+  <path d="M19 46 V18 L35 38 V18 H45 V46 L29 26 V46 Z" fill="url(#niyi-copper-grad)"/>
+  <circle cx="47" cy="18" r="3" fill="#d4885f"/>
   <defs>
-    <linearGradient id="niyi-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="60%" stop-color="#00d2ff"/>
-      <stop offset="100%" stop-color="#6366f1"/>
+    <linearGradient id="niyi-copper-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7f4ee"/>
+      <stop offset="40%" stop-color="#e8a87c"/>
+      <stop offset="100%" stop-color="#b86b43"/>
     </linearGradient>
   </defs>
 </svg>

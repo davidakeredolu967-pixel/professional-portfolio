@@ -3,29 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Niyi — Web Developer, AI-Assisted Builder & Digital Problem Solver</title>
-  
-  <!-- SEO & Social Meta Tags -->
-  <meta name="description" content="Portfolio of Niyi (Akeredolu Kolade David Omoniyi), a web developer and AI-assisted builder creating digital products, solving website problems, and turning ideas into functional experiences.">
-  <meta name="keywords" content="Niyi, Akeredolu Kolade David Omoniyi, Web Developer Nigeria, AI-Assisted Developer, FUTA Mathematical Science, Frontend Developer, Firebase Developer, Digital Products, Website Troubleshooting">
-  <meta name="author" content="Akeredolu Kolade David Omoniyi">
-  <meta name="theme-color" content="#050608">
-  
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Primary SEO Meta Tags -->
+  <title>NIYI — Web Developer • AI-Assisted Developer • Digital Builder</title>
+  <meta name="title" content="NIYI — Web Developer • AI-Assisted Developer • Digital Builder">
+  <meta name="description" content="Official portfolio of Niyi — Mathematical Science student and digital builder turning ideas into digital products through modern web development and AI-assisted workflows.">
+  <meta name="keywords" content="Niyi, Web Developer, AI-Assisted Developer, Digital Builder, Problem Solver, FUTA, Akure, Frontend, Three.js, Portfolio">
+  <meta name="author" content="Niyi">
+  <meta name="theme-color" content="#070605">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NIYI — I turn ideas into digital products.">
+  <meta property="og:description" content="A distinctive, cinematic 3D digital portfolio experience combining web development, AI-assisted workflows, and practical problem-solving.">
+  <meta property="og:image" content="assets/images/projects/portfolio-preview.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NIYI — I turn ideas into digital products.">
+  <meta name="twitter:description" content="A distinctive, cinematic 3D digital portfolio experience combining web development, AI-assisted workflows, and practical problem-solving.">
+  <meta name="twitter:image" content="assets/images/projects/portfolio-preview.jpg">
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Niyi — Web Developer, AI-Assisted Builder & Digital Problem Solver">
-  <meta property="og:description" content="Portfolio of Niyi (Akeredolu Kolade David Omoniyi), a web developer and AI-assisted builder creating digital products, solving website problems, and turning ideas into functional experiences.">
-  <meta property="og:site_name" content="niyi.dev">
-  <meta property="og:url" content="https://davidakeredolu967-pixel.github.io/my-portfolio/">
 
-  <!-- Google Fonts: Bebas Neue, Caveat Script, Space Grotesk, Inter -->
+  <!-- Typography: Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
@@ -35,465 +43,327 @@
 </head>
 <body>
 
-  <div class="bg-canvas" aria-hidden="true"></div>
-  <div class="bg-grid-subtle" aria-hidden="true"></div>
+  <!-- =========================================================================
+       EDITORIAL ENTRY PRELOADER (AESTHETIC STUDIO REVEAL)
+       ========================================================================= -->
+  <div id="page-preloader" class="page-preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-brand">
+        <span class="preloader-title">NIYI</span>
+        <span class="preloader-dot" aria-hidden="true"></span>
+        <span class="preloader-sub">NIYIVERSE</span>
+      </div>
+      <div class="preloader-progress-track">
+        <div class="preloader-progress-bar"></div>
+      </div>
+      <div class="preloader-caption">Curating Digital Architecture</div>
+    </div>
+  </div>
+
+  <!-- Ambient Atmospheric Lighting -->
+  <div class="ambient-glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow-mid" aria-hidden="true"></div>
 
   <!-- =========================================================================
-       1. Sample-Matched Header: Script Logo | Capsule Nav | Direct Email
+       NAVIGATION BAR (SMOKED GLASS)
        ========================================================================= -->
-  <div class="header-wrapper" id="site-header-wrap">
-    <header class="sample-studio-header" id="site-header">
-      
-      <!-- Left: Signature Script Logo -->
-      <a href="#hero" class="brand-script-logo" aria-label="Niyi Homepage">
-        niyi
+  <header id="site-nav" class="site-nav" role="banner">
+    <div class="container nav-container">
+      <!-- Brand Wordmark -->
+      <a href="#hero" class="nav-brand" aria-label="NIYI Home">
+        <span>NIYI</span>
+        <span class="nav-brand-dot" aria-hidden="true"></span>
+        <span class="nav-brand-subtitle">NIYIVERSE</span>
       </a>
 
-      <!-- Center: Capsule Pill Navigation with Active White Chip -->
-      <nav class="capsule-nav-container" aria-label="Primary Navigation">
-        <ul class="capsule-nav-list">
-          <li><a href="#hero" class="capsule-link is-active">Intro</a></li>
-          <li><a href="#skills" class="capsule-link">Approach</a></li>
-          <li><a href="#projects" class="capsule-link">Works</a></li>
-          <li><a href="#about" class="capsule-link">About</a></li>
-          <li><a href="#process" class="capsule-link">Process</a></li>
-          <li><a href="#contact" class="capsule-link">Contact</a></li>
-        </ul>
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#work" class="nav-link">Selected Work</a>
+        <a href="#capabilities" class="nav-link">Capabilities</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#tools" class="nav-link">Tools</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
-      <!-- Right: Direct Email Link & Mobile Toggle -->
-      <div class="header-right-zone">
-        <a href="mailto:akeredoludavid967@gmail.com" class="header-email-link">
-          akeredoludavid967@gmail.com
+      <!-- Nav Actions (Status & CTA) -->
+      <div class="nav-actions">
+        <div class="nav-status-pill" title="Current Availability Status">
+          <span class="status-dot-pulse" aria-hidden="true"></span>
+          <span>Available for Projects</span>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-pill btn-magnetic">
+          <span>Let's Talk</span>
         </a>
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation drawer" aria-expanded="false" aria-controls="mobile-nav-drawer">
+        <button id="nav-toggle-btn" class="nav-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
+    </div>
+  </header>
 
-    </header>
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer" aria-hidden="true">
+    <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+      <a href="#hero" class="mobile-nav-link">Home</a>
+      <a href="#work" class="mobile-nav-link">Selected Work</a>
+      <a href="#capabilities" class="mobile-nav-link">Capabilities</a>
+      <a href="#about" class="mobile-nav-link">About Niyi</a>
+      <a href="#tools" class="mobile-nav-link">Tools & Tech</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+    </nav>
+    <div class="mobile-nav-meta">
+      <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Direct Inquiries</span>
+      <a href="mailto:akeredoludavid967@gmail.com" class="mobile-nav-email">akeredoludavid967@gmail.com</a>
+    </div>
   </div>
 
-  <!-- Mobile Drawer Overlay & Sliding Menu -->
-  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay" aria-hidden="true"></div>
-  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation">
-    <div>
-      <div class="mobile-drawer-header">
-        <div class="brand-script-logo">niyi</div>
-        <button class="modal-close" id="mobile-drawer-close" aria-label="Close navigation menu">✕</button>
-      </div>
-      <ul class="mobile-nav-links">
-        <li><a href="#hero" class="mobile-nav-link">Intro</a></li>
-        <li><a href="#skills" class="mobile-nav-link">Capabilities</a></li>
-        <li><a href="#projects" class="mobile-nav-link">Works</a></li>
-        <li><a href="#about" class="mobile-nav-link">About</a></li>
-        <li><a href="#process" class="mobile-nav-link">Process</a></li>
-        <li><a href="#ai-workflow" class="mobile-nav-link">AI Workflow</a></li>
-        <li><a href="#troubleshooting" class="mobile-nav-link">Problem Solving</a></li>
-        <li><a href="#journey" class="mobile-nav-link">Journey</a></li>
-        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
-      </ul>
-    </div>
-    <div class="mobile-drawer-footer">
-      <div class="status-pill" style="width: fit-content;">
-        <span class="status-dot status-green"></span>
-        <span>Available for building</span>
-      </div>
-      <a href="mailto:akeredoludavid967@gmail.com" class="btn btn-primary" style="width: 100%;">
-        akeredoludavid967@gmail.com
-      </a>
-    </div>
-  </aside>
+  <!-- =========================================================================
+       MAIN CONTENT
+       ========================================================================= -->
+  <main id="main-content" role="main">
 
-  <main>
-    <!-- =========================================================================
-         2. Hero Section: Sample-Matched Giant Condensed & Script Overlay
-         ========================================================================= -->
-    <section class="hero-section" id="hero">
-      
-      <!-- Background Floating Project Matrix (Dense 2-Row Matrix Covering Entire Upper & Lower Background) -->
-      <div class="hero-floating-matrix" id="hero-floating-matrix" aria-hidden="true">
-        <!-- Row 1 (Upper Background directly below header) -->
-        <div class="floating-matrix-card">
-          <img src="assets/images/projects/attendance-system.jpg" alt="" loading="lazy">
-        </div>
-        <div class="floating-matrix-card">
-          <img src="assets/images/projects/recipe-platform.jpg" alt="" loading="lazy">
-        </div>
-        <div class="floating-matrix-card">
-          <img src="assets/images/projects/avanti-vogue.jpg" alt="" loading="lazy">
-        </div>
-        <div class="floating-matrix-card">
-          <img src="assets/images/projects/attendance-system.jpg" alt="" loading="lazy">
-        </div>
-        <!-- Row 2 (Lower Background behind and around giant typography) -->
-        <div class="floating-matrix-card">
-          <img src="assets/images/projects/recipe-platform.jpg" alt="" loading="lazy">
-        </div>
-        <div class="floating-matrix-card">
-          <img src="assets/images/projects/avanti-vogue.jpg" alt="" loading="lazy">
-        </div>
-        <div class="floating-matrix-card">
-          <img src="assets/images/projects/attendance-system.jpg" alt="" loading="lazy">
-        </div>
-        <div class="floating-matrix-card">
-          <img src="assets/images/projects/recipe-platform.jpg" alt="" loading="lazy">
-        </div>
-      </div>
+    <!-- HERO SECTION & 3D ENVIRONMENT -->
+    <section id="hero" class="hero-section" aria-label="Hero Introduction">
+      <!-- 3D Canvas Background -->
+      <div id="hero-3d-canvas-container" class="hero-3d-container" aria-hidden="true"></div>
+      <div id="hero-fallback-geometry" class="hero-fallback-geometry" aria-hidden="true"></div>
 
-      <!-- Foreground Typography Content -->
-      <div class="container">
-        <div class="hero-content-wrapper">
-          
-          <p class="hero-intro-tagline">
-            I turn ideas into digital products 0 → 1
-          </p>
+      <div class="container hero-content">
+        <!-- Availability Label -->
+        <div class="hero-status-tag">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Available for select projects &amp; collaborations</span>
+        </div>
 
-          <!-- Giant Typography Stack with Layered Script -->
-          <div class="hero-giant-typography-stack">
-            <h1 class="hero-giant-title">
-              WEB DEVELOPER & BUILDER
-            </h1>
-            <div class="hero-script-layered">
-              Akure, Nigeria • FUTA
-            </div>
+        <!-- Monumental Wordmark -->
+        <div class="hero-wordmark" aria-hidden="true">NIYI</div>
+
+        <!-- Primary Headline -->
+        <h1 class="hero-headline">
+          I turn ideas into <span class="text-copper">digital products</span>.
+        </h1>
+
+        <!-- Supporting Message -->
+        <p class="hero-description">
+          I build, improve, and bring digital ideas to life through web development, AI-assisted workflows, and practical problem-solving.
+        </p>
+
+        <!-- Professional Metadata Strip -->
+        <div class="hero-meta-strip">
+          <span class="hero-meta-item">Web Developer</span>
+          <span class="hero-meta-divider" aria-hidden="true"></span>
+          <span class="hero-meta-item">AI-Assisted Developer</span>
+          <span class="hero-meta-divider" aria-hidden="true"></span>
+          <span class="hero-meta-item">Mathematical Science @ FUTA</span>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="hero-cta-group">
+          <a href="#work" class="btn btn-primary btn-pill btn-magnetic">
+            <span>Explore My Work</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+          </a>
+          <a href="#contact" class="btn btn-secondary btn-pill btn-magnetic">
+            <span>Let's Build Something</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- Hero Operational Status Bar -->
+        <div class="hero-bottom-bar">
+          <div class="hero-time-widget">
+            <span style="color: var(--copper-bright);">●</span>
+            <span>Akure, Nigeria:</span>
+            <span class="akure-time-clock">Loading...</span>
           </div>
-
-          <p class="hero-subtext-sample">
-            Mathematical Science student at FUTA crafting responsive web applications, troubleshooting digital interfaces, and turning ideas into functional software products.
-          </p>
-
-          <div class="hero-cta-group">
-            <a href="#projects" class="btn btn-primary btn-lg">
-              <span>View selected work</span>
-              <span>↓</span>
-            </a>
-            <a href="#contact" class="btn btn-secondary btn-lg">
-              <span>Let's talk</span>
-              <span>↗</span>
-            </a>
-            <button class="btn btn-ghost btn-sm cv-download-btn" id="cv-download-btn" title="Download CV">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-right:4px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-              <span>CV (Coming Soon)</span>
-            </button>
+          <div class="hero-scroll-cue">
+            <span>Scroll to explore</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- =========================================================================
-         3. Featured Projects (SELECTED WORK)
-         ========================================================================= -->
-    <section class="section" id="projects">
+    <!-- =======================================================================
+         SELECTED WORK (CENTERPIECE 3D STACK GALLERY)
+         ======================================================================= -->
+    <section id="work" class="work-section" aria-label="Selected Projects">
       <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-meta-tag">SELECTED WORK</span>
-          <h2 class="section-title">Case Studies & Digital Products</h2>
+        <header class="section-header">
+          <div class="section-label">01 // Selected Work</div>
+          <h2 class="section-title">Curated Digital Products</h2>
           <p class="section-subtitle">
-            A visual collection of real web applications, e-commerce concepts, and digital design prototypes.
+            A continuous spatial gallery of real web platforms, cloud-backed applications, and digital concepts engineered with intention.
           </p>
-        </div>
+        </header>
 
-        <!-- Dynamic Mount for Alternating Projects -->
-        <div id="projects-mount"></div>
+        <!-- 3D Stack Container Hydrated by js/gallery.js -->
+        <div id="work-gallery-stack" class="work-gallery-stack"></div>
       </div>
     </section>
 
-    <!-- =========================================================================
-         4. Capabilities Section (CAPABILITIES)
-         ========================================================================= -->
-    <section class="section" id="skills" style="background: rgba(10, 13, 19, 0.45);">
+    <!-- =======================================================================
+         CAPABILITIES SECTION (01 - 05 EDITORIAL ARCHITECTURE)
+         ======================================================================= -->
+    <section id="capabilities" class="capabilities-section" aria-label="Capabilities and Services">
       <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-meta-tag">CAPABILITIES</span>
-          <h2 class="section-title">Technical Skills & Approach</h2>
+        <header class="section-header">
+          <div class="section-label">02 // Capabilities</div>
+          <h2 class="section-title">Applied Engineering &amp; Strategy</h2>
           <p class="section-subtitle">
-            Clean, categorized capabilities rooted in practical building experience.
+            Direct, practical technical services designed to turn ideas into structured digital products and resolve real website problems.
           </p>
-        </div>
+        </header>
 
-        <!-- Dynamic Mount for Capabilities Spatial Layout -->
-        <div id="skills-mount"></div>
+        <!-- Hydrated by js/main.js -->
+        <div id="capabilities-grid" class="capabilities-grid"></div>
       </div>
     </section>
 
-    <!-- =========================================================================
-         5. About Section (ABOUT)
-         ========================================================================= -->
-    <section class="section" id="about">
+    <!-- =======================================================================
+         ABOUT NIYI & HOW I WORK
+         ======================================================================= -->
+    <section id="about" class="about-section" aria-label="About Niyi and Methodology">
       <div class="container">
-        <div class="section-header text-left reveal-on-scroll">
-          <span class="section-meta-tag">ABOUT</span>
-          <h2 class="section-title">Curious. Technical. Grounded in Logic.</h2>
-        </div>
+        <header class="section-header">
+          <div class="section-label">03 // About Niyi</div>
+          <h2 class="section-title">The Story &amp; Engineering Pipeline</h2>
+          <p class="section-subtitle">
+            A grounded approach to digital craft, continuous learning, and structured problem-solving.
+          </p>
+        </header>
 
-        <div class="about-grid">
-          <!-- Left: Personal Story -->
-          <div class="about-story-card reveal-on-scroll">
-            <p class="about-story-text">
-              I am a Mathematical Science student at the Federal University of Technology, Akure (FUTA) who enjoys building websites, experimenting with technology, and turning ideas into useful digital products.
+        <div class="about-layout">
+          <!-- Story Narrative -->
+          <div class="about-narrative">
+            <blockquote class="about-lead-statement">
+              "I turn ideas into digital products through hands-on web development, AI-assisted workflows, and practical problem-solving."
+            </blockquote>
+
+            <p class="about-bio-text">
+              I'm Niyi, a Mathematical Science student at the Federal University of Technology, Akure (FUTA) and a digital builder who learns by building useful things with technology.
             </p>
-            <p class="about-story-text">
-              I use modern development tools and AI-assisted workflows to build faster, experiment with prototypes, and solve technical hurdles along the way.
+
+            <p class="about-bio-text">
+              My academic background in mathematical sciences grounds my work in structured logic, quantitative reasoning, and algorithmic problem-solving. Rather than relying on rigid theory, I channel this discipline into frontend interfaces, data architecture, and responsive user experiences.
             </p>
-            <div class="about-quote-callout">
-              <p>
-                "I approach software development with mathematical discipline: identify the constraint, structure the logic, leverage modern AI acceleration, and build clean, functional products."
-              </p>
+
+            <p class="about-bio-text">
+              I use modern AI tools deliberately—not to generate careless code, but to accelerate rapid prototyping, diagnose challenging edge cases, and refine products with speed and precision.
+            </p>
+
+            <!-- Academic Background Badge -->
+            <div class="about-academic-badge">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              <div>
+                <div class="about-academic-title">Federal University of Technology, Akure (FUTA)</div>
+                <div class="about-academic-subtitle">Undergraduate Degree • Mathematical Science Department</div>
+              </div>
             </div>
           </div>
 
-          <!-- Right: What I Do Capability Cards -->
-          <div class="what-i-do-grid reveal-on-scroll">
-            <div class="service-card">
-              <div class="service-header">
-                <svg class="service-icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                <h3 class="service-title">Web Development</h3>
-              </div>
-              <p class="service-desc">Building responsive websites and web applications with clean, modern frontend code.</p>
+          <!-- 5-Step Pipeline -->
+          <div class="workflow-container">
+            <div class="workflow-heading">
+              <span>How I Work</span>
+              <span class="badge badge-dev">5-Stage Pipeline</span>
             </div>
-
-            <div class="service-card">
-              <div class="service-header">
-                <svg class="service-icon-svg" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                <h3 class="service-title">AI-Assisted Development</h3>
-              </div>
-              <p class="service-desc">Using AI tools as part of my development, rapid prototyping, and problem-solving workflow.</p>
-            </div>
-
-            <div class="service-card">
-              <div class="service-header">
-                <svg class="service-icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                <h3 class="service-title">Website Troubleshooting</h3>
-              </div>
-              <p class="service-desc">Finding and fixing issues with websites, interfaces, Firebase setups, and broken functionality.</p>
-            </div>
-
-            <div class="service-card">
-              <div class="service-header">
-                <svg class="service-icon-svg" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                <h3 class="service-title">Digital Products</h3>
-              </div>
-              <p class="service-desc">Turning ideas into useful digital products, functional prototypes, and practical tools.</p>
-            </div>
-
-            <div class="service-card" style="grid-column: 1 / -1;">
-              <div class="service-header">
-                <svg class="service-icon-svg" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-                <h3 class="service-title">E-commerce</h3>
-              </div>
-              <p class="service-desc">Exploring Shopify store setups, product research, online retail concepts, and digital store branding.</p>
-            </div>
+            <!-- Hydrated by js/main.js -->
+            <div id="workflow-steps-list" class="workflow-steps-list"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================================
-         6. Process Section (PROCESS)
-         ========================================================================= -->
-    <section class="section" id="process" style="background: rgba(10, 13, 19, 0.45);">
+    <!-- =======================================================================
+         TOOLS, TECHNOLOGIES & TECHNICAL RIGOR
+         ======================================================================= -->
+    <section id="tools" class="tools-section" aria-label="Tools and Technologies">
       <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-meta-tag">PROCESS</span>
-          <h2 class="section-title">Ideas → Built</h2>
+        <header class="section-header">
+          <div class="section-label">04 // Tools &amp; Rigor</div>
+          <h2 class="section-title">Verified Technologies &amp; Skills</h2>
           <p class="section-subtitle">
-            A structured 4-stage pipeline taking ideas from initial concept to a functional result.
+            An honest, defensible overview distinguishing proven production tools from actively developing capabilities.
           </p>
-        </div>
+        </header>
 
-        <!-- Dynamic Mount for Ideas -> Built Interactive Module -->
-        <div id="ideas-built-mount" class="reveal-on-scroll"></div>
+        <!-- Hydrated by js/main.js -->
+        <div id="tools-grid" class="tools-grid"></div>
       </div>
     </section>
 
-    <!-- =========================================================================
-         7. "Building With AI" Section (BUILDING WITH AI)
-         ========================================================================= -->
-    <section class="section" id="ai-workflow">
+    <!-- =======================================================================
+         CONTACT SECTION
+         ======================================================================= -->
+    <section id="contact" class="contact-section" aria-label="Contact and Collaboration">
       <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-meta-tag">BUILDING WITH AI</span>
-          <h2 class="section-title">Augmented Engineering</h2>
-          <p class="section-subtitle">
-            AI is a development tool in my workflow—speeding up prototyping and debugging while human reasoning and architecture lead the build.
+        <div class="contact-card">
+          <div class="section-label">05 // Collaboration</div>
+          <h2 class="contact-headline">Have an idea? Let's build it.</h2>
+          <p class="contact-subtext">
+            Whether you need a website, want to improve an existing product, or have an idea worth exploring, let's talk.
           </p>
-        </div>
 
-        <!-- Dynamic Mount for AI Workflow Stepper -->
-        <div id="ai-workflow-mount" class="reveal-on-scroll"></div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         8. Problem Solving & Troubleshooting (PROBLEM SOLVING)
-         ========================================================================= -->
-    <section class="section" id="troubleshooting" style="background: rgba(8, 10, 15, 0.5);">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-meta-tag">PROBLEM SOLVING</span>
-          <h2 class="section-title">When Things Break, I Figure Them Out.</h2>
-          <p class="section-subtitle">
-            Finding and fixing issues with websites, interfaces, and databases. Practical examples of hurdles diagnosed and solved.
-          </p>
-        </div>
-
-        <!-- Dynamic Mount for Troubleshooting Cases -->
-        <div id="troubleshooting-mount" class="reveal-on-scroll"></div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         9. My Journey Timeline (MY JOURNEY)
-         ========================================================================= -->
-    <section class="section" id="journey">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-meta-tag">MY JOURNEY</span>
-          <h2 class="section-title">My Journey</h2>
-          <p class="section-subtitle">
-            From exploring digital business to web development, building with Firebase, and incorporating AI-assisted workflows.
-          </p>
-        </div>
-
-        <!-- Dynamic Mount for Journey Timeline -->
-        <div id="journey-mount"></div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         10. Currently Building Snapshot (ACTIVE EXPLORATIONS)
-         ========================================================================= -->
-    <section class="section" id="currently-building" style="background: rgba(10, 13, 19, 0.45);">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-meta-tag">ACTIVE EXPLORATIONS</span>
-          <h2 class="section-title">Active Explorations</h2>
-          <p class="section-subtitle">
-            An active snapshot of projects currently in development or exploration.
-          </p>
-        </div>
-
-        <!-- Dynamic Mount for Currently Building Snapshot -->
-        <div id="currently-building-mount"></div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         11. Contact Section (GET IN TOUCH)
-         ========================================================================= -->
-    <section class="section" id="contact" style="background: rgba(5, 7, 10, 0.96);">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <span class="section-meta-tag">GET IN TOUCH</span>
-          <h2 class="section-title">HAVE AN IDEA? <br>LET'S BUILD IT.</h2>
-          <p class="section-subtitle">
-            Whether you want a website built, need help solving a website problem, or want to collaborate on a digital product, I'd love to hear from you.
-          </p>
-        </div>
-
-        <div class="contact-grid-wrapper">
-          <!-- Left: Direct Contact Information -->
-          <div class="contact-direct-card reveal-on-scroll">
-            <div>
-              <h3 style="font-size: var(--font-size-2xl); margin-bottom: 8px;">Let's Connect</h3>
-              <p style="color: var(--text-secondary); line-height: 1.68;">
-                Reach out directly via email or phone, or submit a message through the form to discuss your project.
-              </p>
-            </div>
-
-            <div class="contact-quick-list">
-              <!-- Clickable Primary Email -->
-              <div class="contact-method-item">
-                <div class="contact-method-left">
-                  <svg class="contact-icon-svg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                  <div>
-                    <div class="contact-method-label">Primary Email</div>
-                    <a href="mailto:akeredoludavid967@gmail.com" class="contact-method-val" style="color: #F4F3EE; text-decoration: underline; text-underline-offset: 3px;">
-                      akeredoludavid967@gmail.com
-                    </a>
-                  </div>
-                </div>
-                <button class="btn btn-secondary btn-sm" id="copy-email-btn" data-email="akeredoludavid967@gmail.com" title="Copy email address">
-                  <span>Copy</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <div class="contact-methods-grid">
+            <!-- Email Block -->
+            <div class="contact-email-box">
+              <span class="contact-email-label">Direct Email</span>
+              <a href="mailto:akeredoludavid967@gmail.com" class="contact-email-val">akeredoludavid967@gmail.com</a>
+              <div class="contact-email-actions">
+                <a href="mailto:akeredoludavid967@gmail.com" class="btn btn-primary btn-pill">
+                  <span>Open Email Client</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </a>
+                <button type="button" class="btn btn-secondary btn-pill copy-email-btn">
+                  <span>Copy Address</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                 </button>
               </div>
-
-              <!-- Clickable Phone Number -->
-              <div class="contact-method-item">
-                <div class="contact-method-left">
-                  <svg class="contact-icon-svg" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  <div>
-                    <div class="contact-method-label">Direct Phone</div>
-                    <a href="tel:+2349054168609" class="contact-method-val" style="color: #F4F3EE;">
-                      09054168609
-                    </a>
-                  </div>
-                </div>
-                <a href="tel:+2349054168609" class="badge badge-lime">
-                  <span>Call ↗</span>
-                </a>
-              </div>
-
-              <!-- Location Info -->
-              <div class="contact-method-item">
-                <div class="contact-method-left">
-                  <svg class="contact-icon-svg" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                  <div>
-                    <div class="contact-method-label">Location</div>
-                    <div class="contact-method-val">Akure, Nigeria</div>
-                  </div>
-                </div>
-                <span class="badge badge-glass">Remote Ready</span>
-              </div>
-
-              <!-- University Info -->
-              <div class="contact-method-item">
-                <div class="contact-method-left">
-                  <svg class="contact-icon-svg" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-                  <div>
-                    <div class="contact-method-label">Education</div>
-                    <div class="contact-method-val">FUTA — Mathematical Science</div>
-                  </div>
-                </div>
-                <span class="badge badge-glass">Undergraduate</span>
-              </div>
             </div>
 
-            <!-- External GitHub Profile -->
-            <div style="margin-top: 4px;">
-              <a href="https://github.com/davidakeredolu967-pixel" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">
-                <span>GitHub — @davidakeredolu967-pixel</span>
-                <span>↗</span>
+            <!-- GitHub & Profiles Block -->
+            <div class="contact-social-box">
+              <div>
+                <div class="contact-social-label">Code Repositories</div>
+                <p style="font-size: var(--text-sm); color: var(--text-secondary); margin-bottom: 1rem;">
+                  Explore authentic source code, commit history, and active builds.
+                </p>
+              </div>
+              <a href="https://github.com/davidakeredolu967-pixel" target="_blank" rel="noopener noreferrer" class="contact-github-link">
+                <div style="display:flex;align-items:center;gap:0.75rem;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>github.com/davidakeredolu967-pixel</span>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </a>
             </div>
           </div>
 
-          <!-- Right: Contact Form -->
-          <div class="contact-form-frame reveal-on-scroll">
-            <form class="contact-form-element" id="contact-form">
-              <div class="form-field-group">
-                <label for="contact-name" class="form-field-label">Your Name</label>
-                <input type="text" id="contact-name" class="form-field-input" placeholder="e.g. Alex Johnson" required>
+          <!-- Quick Dispatch Composer -->
+          <div class="contact-composer">
+            <h3 class="composer-title">Send a Quick Message</h3>
+            <p class="composer-subtitle">Pre-fills your message directly into an email draft to Niyi.</p>
+            <form id="quick-composer-form">
+              <div class="composer-form-grid">
+                <div class="form-field">
+                  <label for="composer-name" class="form-label">Your Name</label>
+                  <input type="text" id="composer-name" class="form-input" placeholder="e.g. Alex" autocomplete="name">
+                </div>
+                <div class="form-field">
+                  <label for="composer-email" class="form-label">Your Email</label>
+                  <input type="email" id="composer-email" class="form-input" placeholder="name@company.com" autocomplete="email">
+                </div>
               </div>
-
-              <div class="form-field-group">
-                <label for="contact-email" class="form-field-label">Your Email</label>
-                <input type="email" id="contact-email" class="form-field-input" placeholder="e.g. alex@example.com" required>
+              <div class="form-field" style="margin-bottom: var(--space-md);">
+                <label for="composer-message" class="form-label">Project Details or Idea *</label>
+                <textarea id="composer-message" class="form-textarea" placeholder="Tell me about what you want to build or improve..." required></textarea>
               </div>
-
-              <div class="form-field-group">
-                <label for="contact-message" class="form-field-label">Message</label>
-                <textarea id="contact-message" class="form-field-textarea" placeholder="Tell me about the website you want built or the problem you're trying to solve..." required></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">
-                <span>Send Message</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              <button type="submit" class="btn btn-primary btn-pill">
+                <span>Compose Message</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               </button>
             </form>
           </div>
@@ -503,61 +373,86 @@
   </main>
 
   <!-- =========================================================================
-       12. Footer
+       FOOTER
        ========================================================================= -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top-row">
-        <div>
-          <div class="footer-brand-title">niyi</div>
-          <div style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-top: 2px;">Akeredolu Kolade David Omoniyi</div>
-          <div class="footer-brand-sub" style="margin-top: 4px;">Building ideas into digital products.</div>
-        </div>
-
-        <ul class="footer-nav-list">
-          <li><a href="#projects" class="footer-nav-link">Works</a></li>
-          <li><a href="#skills" class="footer-nav-link">Approach</a></li>
-          <li><a href="#about" class="footer-nav-link">About</a></li>
-          <li><a href="#process" class="footer-nav-link">Process</a></li>
-          <li><a href="#contact" class="footer-nav-link">Contact</a></li>
-        </ul>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand-col">
+        <div class="footer-wordmark">NIYI // NIYIVERSE</div>
+        <p class="footer-tagline">"I turn ideas into digital products."</p>
       </div>
 
-      <div class="footer-bottom-row">
-        <div>
-          © 2026 Akeredolu Kolade David Omoniyi. All rights reserved.
-        </div>
-        <div style="font-family: var(--font-mono); color: var(--text-muted);">
-          Built with semantic HTML, CSS & JavaScript.
-        </div>
+      <div class="footer-meta-col">
+        <div>Akure, Nigeria • <span class="akure-time-clock">Loading...</span></div>
+        <div>Built with Vanilla JS, CSS3, &amp; Three.js • © <span id="current-year">2026</span> Niyi</div>
       </div>
     </div>
   </footer>
 
   <!-- =========================================================================
-       Project Details Modal Dialog
+       CASE STUDY EDITORIAL MODAL
        ========================================================================= -->
-  <div class="modal-backdrop" id="project-modal" role="dialog" aria-modal="true" aria-label="Project Details">
-    <div class="modal-content">
-      <button class="modal-close" id="modal-close-btn" aria-label="Close Project Details">✕</button>
-      <div id="modal-dynamic-content">
-        <!-- Dynamically injected via js/projects.js -->
+  <div id="case-study-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal dialog">✕</button>
+      <img id="modal-img" src="assets/images/projects/portfolio-preview.jpg" alt="" class="modal-header-image">
+      <div class="modal-body">
+        <div class="modal-meta-row">
+          <span id="modal-badge" class="badge badge-dev"></span>
+          <span id="modal-type" class="badge badge-tech"></span>
+        </div>
+        <h2 id="modal-title" class="modal-title"></h2>
+        <p id="modal-desc" class="modal-desc"></p>
+
+        <div class="modal-grid-details">
+          <div class="modal-detail-card">
+            <div class="modal-detail-label">The Problem</div>
+            <div id="modal-problem" class="modal-detail-val"></div>
+          </div>
+          <div class="modal-detail-card">
+            <div class="modal-detail-label">The Engineering Solution</div>
+            <div id="modal-solution" class="modal-detail-val"></div>
+          </div>
+        </div>
+
+        <div class="modal-detail-card" style="margin-bottom: var(--space-xl);">
+          <div class="modal-detail-label">Technical Takeaways &amp; Key Features</div>
+          <div id="modal-takeaway" class="modal-detail-val" style="margin-bottom: 0.75rem;"></div>
+          <ul id="modal-highlights" style="margin-top: 0.5rem;"></ul>
+        </div>
+
+        <div class="modal-actions">
+          <a id="modal-link-live" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-pill">
+            <span>Open Live Experience</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+          <a id="modal-link-github" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>Source Code</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Toast Notification Container -->
-  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+  <!-- Back to Top Floating Button -->
+  <button id="back-to-top-btn" class="back-to-top" aria-label="Return to top of page">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="js/canvas3d.js"></script>
+  <!-- Vendor Scripts -->
+  <script src="js/vendor/three.min.js"></script>
+
+  <!-- Application Logic Scripts -->
   <script src="js/data.js"></script>
+  <script src="js/hero-scene.js"></script>
+  <script src="js/gallery.js"></script>
   <script src="js/interactions.js"></script>
-  <script src="js/projects.js"></script>
-  <script src="js/contact.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/motion.js"></script>
+
+  <!-- Auto update copyright year -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

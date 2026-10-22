@@ -1,260 +1,197 @@
 /* ==========================================================================
-   Responsive Adaptations & Mobile First Breakpoint Matrix
-   Verified for: 320px, 360px, 375px, 390px, 414px, 480px, 768px, 1024px, 1280px, 1440px, 1920px
-   Mature Glass & Creative Digital Studio Aesthetic
+   NIYIVERSE — RESPONSIVE DESIGN & ADAPTIVE BREAKPOINTS
+   Strict matrix: 320px mobile -> 768px tablet -> 1024px laptop -> 1440px+ ultra-wide
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. Mobile Navigation Drawer (Smoked Glass Slide)
+   Small Mobile Phones (320px – 480px)
    -------------------------------------------------------------------------- */
-.mobile-nav-drawer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 86%;
-  max-width: 340px;
-  height: 100vh;
-  height: 100dvh;
-  background: #0E1015;
-  border-left: 1px solid var(--border-light);
-  padding: var(--space-lg) var(--space-md);
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transform: translateX(100%);
-  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: -15px 0 40px rgba(0, 0, 0, 0.9);
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  will-change: transform;
-}
-
-.mobile-nav-drawer.is-open {
-  transform: translateX(0);
-}
-
-.mobile-drawer-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.28s ease, visibility 0.28s ease;
-  will-change: opacity;
-}
-
-.mobile-drawer-overlay.is-open {
-  opacity: 1;
-  visibility: visible;
-}
-
-.mobile-drawer-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--space-lg);
-  padding-bottom: var(--space-sm);
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.mobile-nav-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-}
-
-.mobile-nav-link {
-  font-family: var(--font-heading);
-  font-size: var(--font-size-base);
-  font-weight: 500;
-  color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  min-height: var(--touch-target-min);
-  border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
-  touch-action: manipulation;
-}
-
-.mobile-nav-link:hover,
-.mobile-nav-link.is-active {
-  color: var(--text-primary);
-  background: var(--bg-glass-hover);
-}
-
-.mobile-nav-link.is-active {
-  color: var(--accent-champagne);
-}
-
-.mobile-drawer-footer {
-  padding-top: var(--space-md);
-  border-top: 1px solid var(--border-subtle);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-/* --------------------------------------------------------------------------
-   2. Small Mobile Screens (320px – 360px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 360px) {
+@media (max-width: 480px) {
   :root {
-    --container-pad: 0.9rem;
+    --container-pad: 1.15rem;
+    --space-section: 3.75rem;
   }
 
-  .header-wrapper {
-    top: 10px;
-    padding: 0 10px;
+  .hero-section {
+    padding-top: 6.5rem;
+    padding-bottom: 3rem;
+    min-height: auto;
   }
 
-  .liquid-glass-header {
-    height: 48px;
-    padding: 0 12px;
-  }
-
-  .section {
-    padding-top: var(--space-2xl);
-    padding-bottom: var(--space-2xl);
+  .hero-wordmark {
+    font-size: 3.8rem;
+    letter-spacing: -0.03em;
   }
 
   .hero-headline {
     font-size: 1.95rem;
-    line-height: 1.15;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
   }
 
   .hero-cta-group {
     flex-direction: column;
-    width: 100%;
     align-items: stretch;
+    width: 100%;
+    gap: 0.75rem;
   }
 
   .hero-cta-group .btn {
     width: 100%;
+    justify-content: center;
   }
 
-  .project-actions-row {
+  .hero-bottom-bar {
     flex-direction: column;
-    width: 100%;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .project-card-wrapper {
+    top: 75px;
+    margin-bottom: 2rem;
+  }
+
+  .project-visual-frame {
+    min-height: 220px;
+  }
+
+  .project-info-frame {
+    padding: 1.25rem;
+  }
+
+  .project-card-actions {
+    flex-direction: column;
     align-items: stretch;
-  }
-
-  .project-actions-row .btn {
     width: 100%;
   }
 
-  .ideas-steps-flow {
+  .project-card-actions .btn {
+    width: 100%;
+  }
+
+  .capabilities-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
-  .modal-content {
-    padding: var(--space-md);
-    border-radius: var(--radius-lg);
-  }
-}
-
-/* --------------------------------------------------------------------------
-   3. Medium Mobile Screens (361px – 480px)
-   -------------------------------------------------------------------------- */
-@media (min-width: 361px) and (max-width: 480px) {
-  .header-wrapper {
-    top: 12px;
-    padding: 0 12px;
+  .capability-card {
+    min-height: auto;
+    padding: 1.5rem;
   }
 
-  .liquid-glass-header {
-    height: 50px;
-    padding: 0 14px;
+  .contact-card {
+    padding: 1.5rem;
   }
 
-  .section {
-    padding-top: var(--space-3xl);
-    padding-bottom: var(--space-3xl);
+  .contact-headline {
+    font-size: 1.85rem;
   }
 
-  .hero-cta-group {
-    flex-direction: column;
-    width: 100%;
-    align-items: stretch;
+  .modal-dialog {
+    max-height: 95vh;
+    border-radius: var(--radius-md);
   }
 
-  .hero-cta-group .btn {
-    width: 100%;
+  .modal-body {
+    padding: 1.25rem;
   }
 
-  .project-actions-row {
-    flex-direction: column;
-    width: 100%;
-    align-items: stretch;
-  }
-
-  .project-actions-row .btn {
-    width: 100%;
+  .modal-header-image {
+    height: 200px;
   }
 }
 
 /* --------------------------------------------------------------------------
-   4. Phablets & Small Tablets (481px – 768px)
+   Tablets & Mid-range Devices (481px – 768px)
    -------------------------------------------------------------------------- */
 @media (min-width: 481px) and (max-width: 768px) {
-  .hero-cta-group {
-    flex-direction: row;
-    flex-wrap: wrap;
+  .hero-wordmark {
+    font-size: 5.5rem;
+  }
+
+  .hero-headline {
+    font-size: 2.4rem;
+  }
+
+  .project-visual-frame {
+    min-height: 260px;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 /* --------------------------------------------------------------------------
-   5. Large Displays (≥ 1440px)
+   Laptops (769px – 1024px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-wordmark {
+    font-size: 7.5rem;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Large Desktop Monitors (1440px+)
    -------------------------------------------------------------------------- */
 @media (min-width: 1440px) {
-  .container {
-    max-width: 1180px;
+  :root {
+    --container-max: 1400px;
+  }
+
+  .hero-wordmark {
+    font-size: 10.5rem;
   }
 }
 
 /* --------------------------------------------------------------------------
-   6. Touch Target & Overflow Defenses
+   Touch Device Optimizations
    -------------------------------------------------------------------------- */
-button, a, input, select, textarea {
-  touch-action: manipulation;
-}
-
-/* Prevent horizontal page overflow */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-  position: relative;
-}
-
-/* --------------------------------------------------------------------------
-   7. Reduced Motion Accessibility
-   -------------------------------------------------------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  .reveal-on-scroll {
-    opacity: 1 !important;
+@media (hover: none) and (pointer: coarse) {
+  /* Prevent sticky hover effects on touch devices */
+  .btn:hover,
+  .capability-card:hover,
+  .tool-item:hover,
+  .project-card:hover {
     transform: none !important;
   }
 
-  .mobile-nav-drawer {
-    transition: none !important;
+  /* Ensure touch targets meet minimum 44px */
+  .btn,
+  .nav-link,
+  .mobile-nav-link,
+  .modal-close-btn,
+  .back-to-top {
+    min-height: 44px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion Accessibility
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .project-card-wrapper {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 
-  .status-dot.status-green::after {
+  .hero-scroll-cue svg {
     animation: none !important;
+  }
+
+  .status-dot-pulse::after {
+    animation: none !important;
+  }
+
+  .hero-3d-container {
+    opacity: 0.6;
   }
 }

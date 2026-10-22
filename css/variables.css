@@ -1,88 +1,113 @@
 /* ==========================================================================
-   Design System Tokens — Niyi Portfolio
-   Sample-Matched High-End Studio Aesthetic: Condensed & Script Layering
+   NIYIVERSE — LUXURY 3D EDITORIAL DESIGN TOKENS
+   Color Palette: Deep Obsidian, Espresso, Warm Ivory, Muted Copper & Bronze
    ========================================================================== */
 
 :root {
-  /* Surface Colors: Deep Obsidian Void & Smoked Glass */
-  --bg-body: #050608;
-  --bg-primary: #0A0C10;
-  --bg-surface: #10131A;
-  --bg-surface-elevated: #161A24;
-  --bg-glass: rgba(255, 255, 255, 0.04);
-  --bg-glass-hover: rgba(255, 255, 255, 0.08);
-  --bg-glass-subtle: rgba(255, 255, 255, 0.02);
-  --bg-capsule-nav: rgba(14, 16, 22, 0.88);
-  
-  /* Borders & Dividers */
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-light: rgba(255, 255, 255, 0.10);
-  --border-hover: rgba(255, 255, 255, 0.22);
-  --border-accent: rgba(198, 255, 58, 0.4);
+  /* Surface & Background Colors */
+  --bg-deep: #070605;
+  --bg-obsidian: #0b0908;
+  --bg-espresso: #14110e;
+  --bg-surface: rgba(19, 16, 14, 0.72);
+  --bg-surface-elevated: rgba(28, 24, 21, 0.85);
+  --bg-surface-subtle: rgba(255, 255, 255, 0.02);
+  --bg-glass-smoked: rgba(14, 12, 10, 0.78);
+  --bg-glass-pill: rgba(20, 17, 15, 0.65);
 
-  /* Accents */
-  --accent-lime: #C6FF3A;
-  --accent-copper: #D0A878;
-  --accent-terracotta: #C85A2A;
-  --accent-purple: #483D8B;
+  /* Typography Colors: Warm Ivory Hierarchy */
+  --text-ivory: #f7f4ee;
+  --text-secondary: #cec5b7;
+  --text-muted: #8e877a;
+  --text-faint: #565045;
+  --text-inverse: #0b0908;
 
-  /* Typography Colors */
-  --text-primary: #F4F3EE;
-  --text-secondary: #9DA3AF;
-  --text-muted: #646B79;
-  --text-faint: #3E4450;
+  /* Accent Colors: Muted Copper & Burnished Bronze */
+  --copper-primary: #c87a52;
+  --copper-bright: #d98a5e;
+  --copper-light: #e8a87c;
+  --copper-burnished: #965330;
+  --copper-dark: #6e3a1f;
+  --copper-glow: rgba(200, 122, 82, 0.16);
+  --copper-glow-subtle: rgba(200, 122, 82, 0.08);
+  --copper-border: rgba(200, 122, 82, 0.28);
+  --copper-border-hover: rgba(217, 138, 94, 0.55);
 
-  /* Typography Stacks */
-  --font-heading: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-mono: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
-  --font-condensed: 'Bebas Neue', -apple-system, sans-serif;
-  --font-script: 'Caveat', cursive, sans-serif;
+  /* Status Colors */
+  --status-live: #4ade80;
+  --status-live-glow: rgba(74, 222, 128, 0.25);
+  --status-dev: #e29b74;
+  --status-dev-glow: rgba(226, 155, 116, 0.25);
+  --status-concept: #94a3b8;
 
-  /* Fluid Responsive Typography */
-  --font-size-xs: clamp(0.72rem, 0.7rem + 0.1vw, 0.78rem);
-  --font-size-sm: clamp(0.82rem, 0.8rem + 0.15vw, 0.88rem);
-  --font-size-base: clamp(0.92rem, 0.88rem + 0.2vw, 1rem);
-  --font-size-md: clamp(1.02rem, 0.98rem + 0.3vw, 1.18rem);
-  --font-size-lg: clamp(1.18rem, 1.1rem + 0.45vw, 1.38rem);
-  --font-size-xl: clamp(1.35rem, 1.25rem + 0.65vw, 1.75rem);
-  --font-size-2xl: clamp(1.7rem, 1.45rem + 1.1vw, 2.35rem);
-  --font-size-3xl: clamp(2.1rem, 1.75rem + 1.6vw, 3.1rem);
-  --font-size-giant: clamp(3.2rem, 2.5rem + 6.5vw, 8.5rem);
+  /* Architectural Borders & Dividers */
+  --border-subtle: rgba(247, 244, 238, 0.07);
+  --border-card: rgba(247, 244, 238, 0.10);
+  --border-light: rgba(247, 244, 238, 0.16);
+  --border-focus: rgba(200, 122, 82, 0.6);
 
-  /* Spacing Tokens */
+  /* Typography Scale */
+  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Fluid Font Sizes */
+  --text-xs: clamp(0.72rem, 0.70rem + 0.15vw, 0.80rem);
+  --text-sm: clamp(0.82rem, 0.78rem + 0.25vw, 0.92rem);
+  --text-base: clamp(0.95rem, 0.90rem + 0.30vw, 1.05rem);
+  --text-md: clamp(1.10rem, 1.02rem + 0.45vw, 1.25rem);
+  --text-lg: clamp(1.30rem, 1.18rem + 0.70vw, 1.55rem);
+  --text-xl: clamp(1.65rem, 1.45rem + 1.10vw, 2.10rem);
+  --text-2xl: clamp(2.10rem, 1.80rem + 1.60vw, 2.90rem);
+  --text-3xl: clamp(2.70rem, 2.20rem + 2.50vw, 3.90rem);
+  --text-hero: clamp(3.20rem, 2.40rem + 4.5vw, 6.20rem);
+  --text-wordmark: clamp(4.5rem, 3.2rem + 8vw, 11.5rem);
+
+  /* Line Heights */
+  --lh-tight: 1.05;
+  --lh-snug: 1.25;
+  --lh-normal: 1.6;
+  --lh-relaxed: 1.75;
+
+  /* Spacing Scale */
   --space-2xs: 0.25rem;
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4.5rem;
-  --space-4xl: 6.5rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+  --space-xl: 3.25rem;
+  --space-2xl: 5rem;
+  --space-3xl: 7.5rem;
+  --space-section: clamp(4.5rem, 3.5rem + 4vw, 8rem);
 
-  /* Touch Target Minimum */
-  --touch-target-min: 44px;
-
-  /* Container & Grid */
-  --container-max: 1200px;
-  --container-pad: clamp(1.1rem, 4.5vw, 2.5rem);
-  --nav-height: 68px;
-
-  /* Radii */
-  --radius-xs: 6px;
-  --radius-sm: 10px;
+  /* Architectural Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
-  --radius-xl: 26px;
-  --radius-full: 9999px;
+  --radius-xl: 28px;
+  --radius-pill: 9999px;
 
-  /* Shadows */
-  --shadow-glass: 0 16px 40px -10px rgba(0, 0, 0, 0.85);
-  --shadow-glass-hover: 0 24px 50px -12px rgba(0, 0, 0, 0.95);
+  /* Shadows & Depth */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.65);
+  --shadow-glass: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --shadow-copper: 0 10px 30px rgba(200, 122, 82, 0.22);
 
-  /* Transitions */
-  --transition-fast: 160ms cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-normal: 260ms cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  /* Motion & Easing */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --transition-fast: 0.2s var(--ease-editorial);
+  --transition-normal: 0.4s var(--ease-editorial);
+  --transition-slow: 0.75s var(--ease-editorial);
+
+  /* Layout Max Widths */
+  --container-max: 1320px;
+  --container-narrow: 920px;
+  --container-pad: clamp(1.25rem, 0.85rem + 2vw, 3rem);
+
+  /* Glass Surface Effects */
+  --backdrop-blur-sm: blur(12px);
+  --backdrop-blur-md: blur(20px);
+  --backdrop-blur-lg: blur(32px);
 }

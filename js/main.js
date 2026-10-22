@@ -1,181 +1,178 @@
 /**
- * Main Application Script — Niyi Portfolio
- * Handles Navbar scroll effects, Capsule ScrollSpy, Mobile Drawer, and Floating Matrix Parallax
+ * ============================================================================
+ * NIYIVERSE — CORE APPLICATION INITIALIZATION & SECTION HYDRATION
+ * Handles dynamic content rendering, scroll spy, navigation & lifecycle
+ * ============================================================================
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-  initNavbar();
-  initMobileDrawer();
-  initScrollReveal();
-  initScrollSpy();
-  initSmoothScroll();
-  initHeroParallax();
-});
+(function () {
+  'use strict';
 
-/**
- * 1. Sticky Navbar on Scroll
- */
-function initNavbar() {
-  const header = document.getElementById('site-header');
-  if (!header) return;
+  // 1. Hydrate Capabilities Section
+  function hydrateCapabilities() {
+    const grid = document.getElementById('capabilities-grid');
+    if (!grid || !window.NIYI_DATA || !window.NIYI_DATA.capabilities) return;
 
-  const handleScroll = () => {
-    if (window.scrollY > 20) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  };
-
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll();
-}
-
-/**
- * 2. Mobile Navigation Drawer with full accessibility & scroll lock
- */
-function initMobileDrawer() {
-  const toggleBtn = document.getElementById('mobile-menu-toggle');
-  const drawer = document.getElementById('mobile-nav-drawer');
-  const overlay = document.getElementById('mobile-drawer-overlay');
-  const closeBtn = document.getElementById('mobile-drawer-close');
-  const navLinks = document.querySelectorAll('.mobile-nav-link');
-
-  if (!toggleBtn || !drawer || !overlay) return;
-
-  const openDrawer = () => {
-    drawer.classList.add('is-open');
-    overlay.classList.add('is-open');
-    toggleBtn.classList.add('is-open');
-    toggleBtn.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeDrawer = () => {
-    drawer.classList.remove('is-open');
-    overlay.classList.remove('is-open');
-    toggleBtn.classList.remove('is-open');
-    toggleBtn.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  };
-
-  toggleBtn.addEventListener('click', () => {
-    if (drawer.classList.contains('is-open')) {
-      closeDrawer();
-    } else {
-      openDrawer();
-    }
-  });
-
-  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
-  overlay.addEventListener('click', closeDrawer);
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', closeDrawer);
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
-      closeDrawer();
-    }
-  });
-}
-
-/**
- * 3. Scroll Reveal via IntersectionObserver
- */
-function initScrollReveal() {
-  const elements = document.querySelectorAll('.reveal-on-scroll');
-  if (!elements.length) return;
-
-  if (!('IntersectionObserver' in window)) {
-    elements.forEach(el => el.classList.add('is-revealed'));
-    return;
+    grid.innerHTML = window.NIYI_DATA.capabilities.map(cap => `
+      <div class="capability-card">
+        <div>
+          <div class="capability-number">${cap.number}</div>
+          <h3 class="capability-title">${cap.title}</h3>
+          <p class="capability-desc">${cap.description}</p>
+        </div>
+        <div class="capability-tag">${cap.tag}</div>
+      </div>
+    `).join('');
   }
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-revealed');
-        obs.unobserve(entry.target);
+  // 2. Hydrate "How I Work" Pipeline
+  function hydrateWorkflow() {
+    const list = document.getElementById('workflow-steps-list');
+    if (!list || !window.NIYI_DATA || !window.NIYI_DATA.workflowSteps) return;
+
+    list.innerHTML = window.NIYI_DATA.workflowSteps.map(step => `
+      <div class="workflow-step-item">
+        <div class="workflow-step-num">${step.step}</div>
+        <div>
+          <h4 class="workflow-step-title">${step.title}</h4>
+          <p class="workflow-step-desc">${step.description}</p>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // 3. Hydrate Tools & Verified Technologies
+  function hydrateTools() {
+    const container = document.getElementById('tools-grid');
+    if (!container || !window.NIYI_DATA || !window.NIYI_DATA.tools) return;
+
+    const { production, learning, complementary } = window.NIYI_DATA.tools;
+
+    const renderList = (items) => items.map(item => `
+      <div class="tool-item">
+        <span class="tool-name">${item.name}</span>
+        <span class="tool-status-tag">${item.status}</span>
+      </div>
+    `).join('');
+
+    container.innerHTML = `
+      <div class="tools-group-card">
+        <div class="tools-group-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="var(--copper-bright)"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          <h3 class="tools-group-title">Core Production Stack</h3>
+        </div>
+        <div class="tools-list">
+          ${renderList(production)}
+        </div>
+      </div>
+
+      <div class="tools-group-card">
+        <div class="tools-group-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="var(--copper-bright)"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <h3 class="tools-group-title">Currently Exploring</h3>
+        </div>
+        <div class="tools-list">
+          ${renderList(learning)}
+        </div>
+      </div>
+
+      <div class="tools-group-card">
+        <div class="tools-group-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="var(--copper-bright)"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          <h3 class="tools-group-title">Complementary Skills</h3>
+        </div>
+        <div class="tools-list">
+          ${renderList(complementary)}
+        </div>
+      </div>
+    `;
+  }
+
+  // 4. Navigation Scroll State & ScrollSpy
+  function initNav() {
+    const nav = document.getElementById('site-nav');
+    const toggleBtn = document.getElementById('nav-toggle-btn');
+    const drawer = document.getElementById('mobile-nav-drawer');
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    // Sticky nav state on scroll
+    window.addEventListener('scroll', () => {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollY > 30) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
       }
-    });
-  }, {
-    root: null,
-    rootMargin: '0px 0px -30px 0px',
-    threshold: 0.08
-  });
+    }, { passive: true });
 
-  elements.forEach(el => observer.observe(el));
-}
+    // Mobile menu toggle
+    if (toggleBtn && drawer) {
+      toggleBtn.addEventListener('click', () => {
+        const isOpen = toggleBtn.classList.toggle('open');
+        drawer.classList.toggle('open', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
 
-/**
- * 4. Active Section ScrollSpy (Updates solid white active chip on capsule nav)
- */
-function initScrollSpy() {
-  const sections = document.querySelectorAll('section[id]');
-  const desktopLinks = document.querySelectorAll('.capsule-link, .nav-menu .nav-link');
-
-  if (!sections.length || !desktopLinks.length) return;
-
-  const onScroll = () => {
-    const scrollY = window.scrollY + 140;
-
-    sections.forEach(sec => {
-      const secTop = sec.offsetTop;
-      const secHeight = sec.offsetHeight;
-      const id = sec.getAttribute('id');
-
-      if (scrollY >= secTop && scrollY < secTop + secHeight) {
-        desktopLinks.forEach(link => {
-          if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('is-active');
-          } else {
-            link.classList.remove('is-active');
-          }
+      // Close mobile drawer when clicking a link
+      drawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          toggleBtn.classList.remove('open');
+          drawer.classList.remove('open');
+          document.body.style.overflow = '';
         });
-      }
-    });
-  };
+      });
+    }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-}
+    // ScrollSpy using IntersectionObserver
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
 
-/**
- * 5. Smooth Scroll Offset Helper
- */
-function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (!targetId || targetId === '#') return;
+    const spyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
 
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        e.preventDefault();
-        const headerOffset = 72;
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    sections.forEach(sec => spyObserver.observe(sec));
+  }
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
+  // 5. Developer Brand Console Watermark
+  function initConsoleWatermark() {
+    const styles = [
+      'color: #d98a5e',
+      'background: #0b0908',
+      'font-size: 13px',
+      'font-family: monospace',
+      'padding: 8px 12px',
+      'border-left: 3px solid #c87a52',
+      'border-radius: 4px'
+    ].join(';');
+
+    console.log(
+      '%c✦ NIYIVERSE — Engineered by Niyi (Mathematical Science @ FUTA)\n"I turn ideas into digital products."',
+      styles
+    );
+  }
+
+  // Bootstrap Application
+  document.addEventListener('DOMContentLoaded', () => {
+    hydrateCapabilities();
+    hydrateWorkflow();
+    hydrateTools();
+    initNav();
+    initConsoleWatermark();
   });
-}
-
-/**
- * 6. Subtle Mouse Parallax on Floating Matrix Cards
- */
-function initHeroParallax() {
-  const matrix = document.getElementById('hero-floating-matrix');
-  if (!matrix) return;
-
-  window.addEventListener('mousemove', (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 20;
-    const y = (e.clientY / window.innerHeight - 0.5) * 20;
-    matrix.style.transform = `perspective(1000px) rotateX(${4 - y * 0.2}deg) rotateY(${x * 0.2}deg) translate3d(${x * 0.5}px, ${y * 0.5}px, 0)`;
-  }, { passive: true });
-}
+})();
